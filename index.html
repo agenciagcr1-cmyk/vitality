@@ -75,11 +75,37 @@
     </div>
 
     <!-- SBT (OFICIAL WIKIMEDIA PNG TRANSPARENTE) -->
-    <div class="flex flex-col items-center flex-shrink-0 w-20">
-  <img 
-    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAYAAAC8h9QmAAAACXBIWXMAAAsTAAALEwEAmpwYAA..."
-    alt="SBT"
-    class="h-10 md:h-12 w-auto object-contain">
+<div class="flex flex-col items-center flex-shrink-0 w-20">
+  <svg viewBox="0 0 512 512"
+       class="h-10 md:h-12 w-auto object-contain"
+       xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+      <radialGradient id="sbtGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffe600"/>
+        <stop offset="20%" stop-color="#ff9a00"/>
+        <stop offset="40%" stop-color="#ff0033"/>
+        <stop offset="60%" stop-color="#cc00cc"/>
+        <stop offset="80%" stop-color="#0066ff"/>
+        <stop offset="100%" stop-color="#00cc66"/>
+      </radialGradient>
+    </defs>
+
+    <circle cx="256" cy="256" r="256" fill="url(#sbtGrad)"/>
+
+    <text x="50%"
+          y="53%"
+          text-anchor="middle"
+          font-family="Helvetica, Arial, sans-serif"
+          font-weight="700"
+          font-size="180"
+          fill="#ffffff"
+          dominant-baseline="middle">
+      sbt
+    </text>
+
+  </svg>
+
   <span class="text-xs text-gray-700 mt-2 text-center">SBT</span>
 </div>
 
@@ -170,6 +196,7 @@
   </script>
 </body>
 </html>
+
 
 
 
