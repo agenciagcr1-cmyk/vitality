@@ -6,29 +6,28 @@
   <title>Portal Notícias Brasil - Método de 5 Segundos</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    .video-overlay { background: rgba(0, 128, 0, 0.92); }
+  </style>
 </head>
-
 <body class="bg-white font-sans">
-
-  <!-- CABEÇALHO -->
-  <div class="bg-red-600 text-white py-4 text-center text-2xl font-bold leading-tight">
+  <!-- CABEÇALHO VERMELHO -->
+  <div class="bg-red-600 text-white py-4 text-center text-2xl font-bold tracking-wide leading-tight">
     MÉTODO DE 5 SEGUNDOS DO BRASIL VENCE PRÊMIO NOBEL<br>
     APÓS LIBERAR 151.573 PESSOAS DA DIABETES – DESCUBRA COMO
   </div>
-
   <!-- CONTADOR -->
   <div class="bg-white border-b-4 border-red-600 py-3 text-center">
     <span id="viewer-count" class="text-red-600 text-2xl font-bold">514</span>
     <span class="text-red-600 text-2xl font-bold"> pessoas assistindo agora...</span>
   </div>
-
-  <!-- BLOCO VÍDEO -->
+  <!-- VÍDEO VERDE -->
   <div class="max-w-4xl mx-auto mt-6 px-4">
     <div class="rounded-3xl overflow-hidden shadow-2xl">
       <div class="bg-green-500 py-14 flex items-center justify-center">
         <div class="relative">
           <i class="fa-solid fa-volume-high text-white text-8xl"></i>
-          <div class="absolute -top-3 -right-3 bg-white text-red-600 rounded-full w-10 h-10 flex items-center justify-center text-4xl font-bold">×</div>
+          <div class="absolute -top-3 -right-3 bg-white text-red-600 rounded-full w-10 h-10 flex items-center justify-center text-4xl font-bold leading-none">×</div>
         </div>
       </div>
       <div class="bg-red-600 text-white py-5 px-8 text-center">
@@ -37,181 +36,116 @@
       </div>
     </div>
   </div>
-
-<!-- SEÇÃO APRESENTADO EM -->
-<section class="apresentado-em">
-
-    <h2>APRESENTADO EM:</h2>
-
+  <!-- APRESENTADO EM (logos atualizadas) -->
+  <div class="max-w-4xl mx-auto mt-10 px-4">
+    <p class="text-center text-red-600 font-bold text-2xl mb-6">APRESENTADO EM:</p>
+   
     <!-- 4 logos de cima -->
-<div class="flex justify-center gap-10 md:gap-16 mb-8">
-  <!-- TV Globo (versão atual 2025, azul/multicor) -->
-  <div class="flex flex-col items-center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/TV_Globo_logo_%28April_2025%29.svg" 
-         alt="TV Globo" class="h-10 w-auto">
-    <span class="text-xs text-gray-700 mt-1">TV Globo</span>
+    <div class="flex justify-center gap-10 md:gap-16 mb-8">
+      <div class="flex flex-col items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/TV_Globo_logo_%28April_2025%29.svg" 
+             alt="TV Globo" class="h-10 w-auto">
+        <span class="text-xs text-gray-700 mt-1">TV Globo</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Logomarca_da_Record_%282023%29.svg" 
+             alt="Record" class="h-10 w-auto">
+        <span class="text-xs text-gray-700 mt-1">Record</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Band_Logo.svg" 
+             alt="Band" class="h-10 w-auto">
+        <span class="text-xs text-gray-700 mt-1">Band</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/SBT_logo.svg" 
+             alt="SBT" class="h-10 w-auto">
+        <span class="text-xs text-gray-700 mt-1">SBT</span>
+      </div>
+    </div>
+    <!-- CNN abaixo -->
+    <div class="flex justify-center">
+      <div class="flex flex-col items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/CNN_Brasil.svg" 
+             alt="CNN Brasil" class="h-10 w-auto">
+        <span class="text-xs text-gray-700 mt-1">CNN Brasil</span>
+      </div>
+    </div>
   </div>
-
-  <!-- Record (versão 2023-atual, em uso) -->
-  <div class="flex flex-col items-center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Logomarca_da_Record_%282023%29.svg" 
-         alt="Record" class="h-10 w-auto">  <!-- Se não carregar, use alternativa abaixo -->
-    <!-- Alternativa se o de cima falhar: https://seeklogo.com/images/R/record-logo-9E5E2E3E3E-seeklogo.com.svg -->
-    <span class="text-xs text-gray-700 mt-1">Record</span>
-  </div>
-
-  <!-- Band (versão clássica olho, SVG limpo) -->
-  <div class="flex flex-col items-center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Band_Logo.svg" 
-         alt="Band" class="h-10 w-auto">
-    <span class="text-xs text-gray-700 mt-1">Band</span>
-  </div>
-
-  <!-- SBT (versão atual, coração/listras) -->
-  <div class="flex flex-col items-center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/SBT_logo.svg" 
-         alt="SBT" class="h-10 w-auto">
-    <span class="text-xs text-gray-700 mt-1">SBT</span>
-  </div>
-</div>
-
-<!-- CNN Brasil abaixo -->
-<div class="flex justify-center">
-  <div class="flex flex-col items-center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/CNN_Brasil_Logo.svg" 
-         alt="CNN Brasil" class="h-10 w-auto">
-    <span class="text-xs text-gray-700 mt-1">CNN Brasil</span>
-  </div>
-</div>
-
-</section>
-
   <!-- COMENTÁRIOS -->
   <div class="max-w-4xl mx-auto mt-12 px-4 pb-20">
-    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-red-600 pb-2">
-      Comentários
-    </h2>
-
+    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-red-600 pb-2">Comentários</h2>
+   
     <div class="space-y-8">
-
-      <!-- Comentário 1 -->
+      <!-- 1º Homem 45 anos (foto real) -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/43.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
+        <div class="flex-1">
           <p class="font-semibold">João Silva <span class="text-gray-500 text-sm">• 3 min</span></p>
           <p class="text-gray-700 mt-1">Método incrível! Recuperei minha saúde em poucas semanas!</p>
+          <div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 92</span></div>
         </div>
       </div>
-
-      <!-- Comentário 2 -->
+      <!-- 2º Mulher 50 anos (foto real) -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/47.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
+        <div class="flex-1">
           <p class="font-semibold">Maria Oliveira <span class="text-gray-500 text-sm">• 3 min</span></p>
           <p class="text-gray-700 mt-1">Estou há 30 anos com diabetes e nunca vi nada assim. Funciona mesmo!</p>
+          <div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 81</span></div>
         </div>
       </div>
-
-      <!-- Comentário 3 -->
+      <!-- Restante dos 8 comentários -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">Ana Paula Ferreira <span class="text-gray-500 text-sm">• 2 min</span></p>
-          <p class="text-gray-700 mt-1">Todo idoso com diabetes precisa ver isso. Mudou minha vida!</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">Ana Paula Ferreira <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Todo idoso com diabetes precisa ver isso. Mudou minha vida!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 74</span></div></div>
       </div>
-
-      <!-- Comentário 4 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/72.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">Carlos Alberto Rocha <span class="text-gray-500 text-sm">• 2 min</span></p>
-          <p class="text-gray-700 mt-1">Finalmente alguém corajoso para falar a verdade!</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">Carlos Alberto Rocha <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Finalmente alguém corajoso para falar a verdade!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 65</span></div></div>
       </div>
-
-      <!-- Comentário 5 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/35.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">Lúcia Mendes <span class="text-gray-500 text-sm">• 2 min</span></p>
-          <p class="text-gray-700 mt-1">Inspirador! Esse médico é uma bênção.</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">Lúcia Mendes <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Inspirador! Esse médico é uma bênção.</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 58</span></div></div>
       </div>
-
-      <!-- Comentário 6 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/29.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">Roberto Lima <span class="text-gray-500 text-sm">• 2 min</span></p>
-          <p class="text-gray-700 mt-1">Aos 70 anos achei que tinha tentado de tudo.</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">Roberto Lima <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Aos 70 anos achei que tinha tentado de tudo.</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 49</span></div></div>
       </div>
-
-      <!-- Comentário 7 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/55.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">Patrícia Almeida <span class="text-gray-500 text-sm">• 2 min</span></p>
-          <p class="text-gray-700 mt-1">Minha glicose já melhorou muito em uma semana!</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">Patrícia Almeida <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Minha glicose já melhorou muito em uma semana!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 43</span></div></div>
       </div>
-
-      <!-- Comentário 8 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/77.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">Helena Costa <span class="text-gray-500 text-sm">• 2 min</span></p>
-          <p class="text-gray-700 mt-1">Eu e meu marido já começamos hoje!</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">Helena Costa <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Eu e meu marido já começamos hoje!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 39</span></div></div>
       </div>
-
-      <!-- Comentário 9 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/88.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">Antônio Ferreira <span class="text-gray-500 text-sm">• 3 min</span></p>
-          <p class="text-gray-700 mt-1">Aos 71 anos ganhei esperança de volta!</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">Antônio Ferreira <span class="text-gray-500 text-sm">• 3 min</span></p><p class="text-gray-700 mt-1">Aos 71 anos ganhei esperança de volta!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 27</span></div></div>
       </div>
-
-      <!-- Comentário 10 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/12.jpg" class="w-12 h-12 rounded-full object-cover">
-        <div>
-          <p class="font-semibold">José Roberto Santos <span class="text-gray-500 text-sm">• 3 min</span></p>
-          <p class="text-gray-700 mt-1">Informação poderosa demais!</p>
-        </div>
+        <div class="flex-1"><p class="font-semibold">José Roberto Santos <span class="text-gray-500 text-sm">• 3 min</span></p><p class="text-gray-700 mt-1">Informação poderosa demais!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 18</span></div></div>
       </div>
-
     </div>
-
-    <p class="text-center text-gray-500 mt-12 text-sm">
-      Você precisa estar logado para comentar
-    </p>
+    <p class="text-center text-gray-500 mt-12 text-sm">Você precisa estar logado para comentar</p>
   </div>
-
   <script>
     let viewers = 514;
     const countEl = document.getElementById('viewer-count');
-
-    function updateCount() {
-      countEl.textContent = viewers;
-    }
-
+    function updateCount() { countEl.textContent = viewers; }
     function randomIncrement() {
-      viewers += Math.floor(Math.random() * 4) + 1;
+      const chance = Math.random();
+      let increment = (chance < 0.60) ? 1 : (chance < 0.82) ? 2 : (chance < 0.94) ? 3 : 4;
+      viewers += increment;
       if (viewers > 1500) viewers = 1500;
       updateCount();
-      setTimeout(randomIncrement, 4000 + Math.random() * 12000);
+      const nextDelay = 4000 + Math.random() * 16000;
+      setTimeout(randomIncrement, nextDelay);
     }
-
     updateCount();
     setTimeout(randomIncrement, 4500);
   </script>
-
 </body>
 </html>
-
-
-
