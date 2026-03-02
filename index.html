@@ -24,17 +24,15 @@
     <span class="text-red-600 text-2xl font-bold"> pessoas assistindo agora...</span>
   </div>
 
-  <!-- VÍDEO VERDE (igual sua imagem) -->
+  <!-- VÍDEO VERDE -->
   <div class="max-w-4xl mx-auto mt-6 px-4">
     <div class="rounded-3xl overflow-hidden shadow-2xl">
-      <!-- Parte verde -->
       <div class="bg-green-500 py-14 flex items-center justify-center">
         <div class="relative">
           <i class="fa-solid fa-volume-high text-white text-8xl"></i>
           <div class="absolute -top-3 -right-3 bg-white text-red-600 rounded-full w-10 h-10 flex items-center justify-center text-4xl font-bold leading-none">×</div>
         </div>
       </div>
-      <!-- Barra vermelha -->
       <div class="bg-red-600 text-white py-5 px-8 text-center">
         <div class="font-bold text-lg">A AGENDA DE HOJE</div>
         <div class="text-sm">Médico brasileiro vence Nobel com método de diabetes e deixa Big Pharma furiosa</div>
@@ -42,26 +40,26 @@
     </div>
   </div>
 
-  <!-- APRESENTADO EM (exatamente como na imagem) -->
+  <!-- APRESENTADO EM (agora com logos que carregam 100%) -->
   <div class="max-w-4xl mx-auto mt-10 px-4">
     <p class="text-center text-red-600 font-bold text-2xl mb-6">APRESENTADO EM:</p>
     
     <!-- 4 logos de cima -->
     <div class="flex justify-center gap-10 md:gap-16 mb-8">
       <div class="flex flex-col items-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Logo_Rede_Globo.svg/300px-Logo_Rede_Globo.svg.png" alt="TV Globo" class="h-10 w-auto">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_Rede_Globo.svg" alt="TV Globo" class="h-10 w-auto">
         <span class="text-xs text-gray-700 mt-1">TV Globo</span>
       </div>
       <div class="flex flex-col items-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_Record_TV.svg/300px-Logo_Record_TV.svg.png" alt="Record" class="h-10 w-auto">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Record_TV.svg" alt="Record" class="h-10 w-auto">
         <span class="text-xs text-gray-700 mt-1">Record</span>
       </div>
       <div class="flex flex-col items-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Band_Logo.svg/300px-Band_Logo.svg.png" alt="Band" class="h-10 w-auto">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Band_Logo.svg" alt="Band" class="h-10 w-auto">
         <span class="text-xs text-gray-700 mt-1">Band</span>
       </div>
       <div class="flex flex-col items-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/SBT_logo.svg/300px-SBT_logo.svg.png" alt="SBT" class="h-10 w-auto">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/SBT_logo.svg" alt="SBT" class="h-10 w-auto">
         <span class="text-xs text-gray-700 mt-1">SBT</span>
       </div>
     </div>
@@ -69,19 +67,19 @@
     <!-- CNN abaixo -->
     <div class="flex justify-center">
       <div class="flex flex-col items-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/CNN_Brasil_Logo.svg/300px-CNN_Brasil_Logo.svg.png" alt="CNN Brasil" class="h-10 w-auto">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/CNN_Brasil_Logo.svg" alt="CNN Brasil" class="h-10 w-auto">
         <span class="text-xs text-gray-700 mt-1">CNN Brasil</span>
       </div>
     </div>
   </div>
 
-  <!-- COMENTÁRIOS - 10 comentários (primeiros dois alterados) -->
+  <!-- COMENTÁRIOS (10 comentários com as 2 primeiras fotos reais que você pediu) -->
   <div class="max-w-4xl mx-auto mt-12 px-4 pb-20">
     <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-red-600 pb-2">Comentários</h2>
     
     <div class="space-y-8">
 
-      <!-- 1º - Homem 45 anos (foto real) -->
+      <!-- 1º Homem 45 anos (foto real) -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/43.jpg" class="w-12 h-12 rounded-full object-cover">
         <div class="flex-1">
@@ -91,7 +89,7 @@
         </div>
       </div>
 
-      <!-- 2º - Mulher 50 anos (foto real) -->
+      <!-- 2º Mulher 50 anos (foto real) -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/47.jpg" class="w-12 h-12 rounded-full object-cover">
         <div class="flex-1">
@@ -101,7 +99,7 @@
         </div>
       </div>
 
-      <!-- 3 a 10 (mantidos) -->
+      <!-- Restante dos 8 comentários -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full object-cover">
         <div class="flex-1"><p class="font-semibold">Ana Paula Ferreira <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Todo idoso com diabetes precisa ver isso. Mudou minha vida!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 74</span></div></div>
@@ -143,9 +141,7 @@
   <script>
     let viewers = 514;
     const countEl = document.getElementById('viewer-count');
-
     function updateCount() { countEl.textContent = viewers; }
-
     function randomIncrement() {
       const chance = Math.random();
       let increment = (chance < 0.60) ? 1 : (chance < 0.82) ? 2 : (chance < 0.94) ? 3 : 4;
@@ -155,7 +151,6 @@
       const nextDelay = 4000 + Math.random() * 16000;
       setTimeout(randomIncrement, nextDelay);
     }
-
     updateCount();
     setTimeout(randomIncrement, 4500);
   </script>
