@@ -42,37 +42,47 @@
   <div class="max-w-4xl mx-auto mt-10 px-4">
     <p class="text-center text-red-600 font-bold text-2xl mb-8">APRESENTADO EM:</p>
 
-    <div class="flex justify-center items-end gap-12 flex-wrap">
+    <div class="flex justify-center items-end gap-16 flex-wrap">
 
       <!-- TV Globo -->
       <div class="flex flex-col items-center w-24">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/TV_Globo_logo_2021.svg"
-             class="h-12 object-contain"
-             alt="TV Globo">
+        <div class="h-12 w-12 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
+          <div class="w-6 h-6 bg-white rounded-full"></div>
+        </div>
         <span class="text-sm text-gray-700 mt-2">TV Globo</span>
       </div>
 
       <!-- Record -->
       <div class="flex flex-col items-center w-24">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/RecordTV_logo.svg"
-             class="h-12 object-contain"
-             alt="Record">
+        <svg class="h-12" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="#1e90ff"/>
+          <ellipse cx="50" cy="50" rx="30" ry="18" fill="#00bfff"/>
+          <ellipse cx="50" cy="50" rx="15" ry="8" fill="white"/>
+        </svg>
         <span class="text-sm text-gray-700 mt-2">Record</span>
       </div>
 
       <!-- Band -->
       <div class="flex flex-col items-center w-24">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Band_logo_2018.svg"
-             class="h-12 object-contain"
-             alt="Band">
+        <svg class="h-12" viewBox="0 0 100 100">
+          <ellipse cx="50" cy="50" rx="45" ry="30" fill="black"/>
+          <ellipse cx="50" cy="50" rx="20" ry="15" fill="white"/>
+        </svg>
         <span class="text-sm text-gray-700 mt-2">Band</span>
       </div>
 
       <!-- SBT -->
       <div class="flex flex-col items-center w-24">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/SBT_logo_2011.svg"
-             class="h-12 object-contain"
-             alt="SBT">
+        <svg class="h-12" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="url(#grad)"/>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ff0000"/>
+              <stop offset="50%" style="stop-color:#ffff00"/>
+              <stop offset="100%" style="stop-color:#00ff00"/>
+            </linearGradient>
+          </defs>
+        </svg>
         <span class="text-sm text-gray-700 mt-2">SBT</span>
       </div>
 
@@ -87,6 +97,7 @@
 
     <div class="space-y-8">
 
+      <!-- Comentário 1 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/43.jpg" class="w-12 h-12 rounded-full object-cover">
         <div>
@@ -95,11 +106,84 @@
         </div>
       </div>
 
+      <!-- Comentário 2 -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/47.jpg" class="w-12 h-12 rounded-full object-cover">
         <div>
           <p class="font-semibold">Maria Oliveira <span class="text-gray-500 text-sm">• 3 min</span></p>
           <p class="text-gray-700 mt-1">Estou há 30 anos com diabetes e nunca vi nada assim. Funciona mesmo!</p>
+        </div>
+      </div>
+
+      <!-- Comentário 3 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">Ana Paula Ferreira <span class="text-gray-500 text-sm">• 2 min</span></p>
+          <p class="text-gray-700 mt-1">Todo idoso com diabetes precisa ver isso. Mudou minha vida!</p>
+        </div>
+      </div>
+
+      <!-- Comentário 4 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/men/72.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">Carlos Alberto Rocha <span class="text-gray-500 text-sm">• 2 min</span></p>
+          <p class="text-gray-700 mt-1">Finalmente alguém corajoso para falar a verdade!</p>
+        </div>
+      </div>
+
+      <!-- Comentário 5 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/women/35.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">Lúcia Mendes <span class="text-gray-500 text-sm">• 2 min</span></p>
+          <p class="text-gray-700 mt-1">Inspirador! Esse médico é uma bênção.</p>
+        </div>
+      </div>
+
+      <!-- Comentário 6 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/men/29.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">Roberto Lima <span class="text-gray-500 text-sm">• 2 min</span></p>
+          <p class="text-gray-700 mt-1">Aos 70 anos achei que tinha tentado de tudo.</p>
+        </div>
+      </div>
+
+      <!-- Comentário 7 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/women/55.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">Patrícia Almeida <span class="text-gray-500 text-sm">• 2 min</span></p>
+          <p class="text-gray-700 mt-1">Minha glicose já melhorou muito em uma semana!</p>
+        </div>
+      </div>
+
+      <!-- Comentário 8 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/women/77.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">Helena Costa <span class="text-gray-500 text-sm">• 2 min</span></p>
+          <p class="text-gray-700 mt-1">Eu e meu marido já começamos hoje!</p>
+        </div>
+      </div>
+
+      <!-- Comentário 9 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/men/88.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">Antônio Ferreira <span class="text-gray-500 text-sm">• 3 min</span></p>
+          <p class="text-gray-700 mt-1">Aos 71 anos ganhei esperança de volta!</p>
+        </div>
+      </div>
+
+      <!-- Comentário 10 -->
+      <div class="flex gap-4">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" class="w-12 h-12 rounded-full object-cover">
+        <div>
+          <p class="font-semibold">José Roberto Santos <span class="text-gray-500 text-sm">• 3 min</span></p>
+          <p class="text-gray-700 mt-1">Informação poderosa demais!</p>
         </div>
       </div>
 
