@@ -8,6 +8,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     .video-overlay { background: rgba(0, 128, 0, 0.92); }
+    /* Ajustes para logos não cortarem em mobile */
+    .logo-container img {
+      max-height: 60px;
+      width: auto;
+    }
+    @media (max-width: 640px) {
+      .logo-container {
+        gap: 12px !important;
+        padding: 0 8px;
+      }
+      .logo-container img {
+        max-height: 48px;
+      }
+    }
   </style>
 </head>
 <body class="bg-white font-sans">
@@ -16,13 +30,11 @@
     MÉTODO DE 5 SEGUNDOS DO BRASIL VENCE PRÊMIO NOBEL<br>
     APÓS LIBERAR 151.573 PESSOAS DA DIABETES – DESCUBRA COMO
   </div>
-
   <!-- CONTADOR -->
   <div class="bg-white border-b-4 border-red-600 py-3 text-center">
     <span id="viewer-count" class="text-red-600 text-2xl font-bold">514</span>
     <span class="text-red-600 text-2xl font-bold"> pessoas assistindo agora...</span>
   </div>
-
   <!-- VÍDEO VERDE -->
   <div class="max-w-4xl mx-auto mt-6 px-4">
     <div class="rounded-3xl overflow-hidden shadow-2xl">
@@ -38,43 +50,38 @@
       </div>
     </div>
   </div>
-
-  <!-- APRESENTADO EM: 4 logos alinhadas -->
-  <div class="max-w-7xl mx-auto mt-10 px-4">
-    <p class="text-center text-red-600 font-bold text-2xl mb-8">APRESENTADO EM:</p>
-    
-    <div class="flex justify-center items-center gap-8 md:gap-16 lg:gap-20 flex-wrap">
-      <!-- TV Globo -->
-      <div class="flex flex-col items-center">
+  <!-- APRESENTADO EM (logos 100% funcionais e alinhadas) -->
+  <div class="max-w-6xl mx-auto mt-10 px-4">
+    <p class="text-center text-red-600 font-bold text-2xl mb-6">APRESENTADO EM:</p>
+    <div class="flex justify-center items-center gap-8 md:gap-16 flex-nowrap overflow-x-auto pb-4 logo-container">
+      <div class="flex flex-col items-center flex-shrink-0 min-w-[90px]">
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/TV_Globo_logo_%28April_2025%29.svg" 
-             alt="TV Globo" class="h-12 md:h-16 w-auto">
-        <span class="text-xs text-gray-700 mt-2">TV Globo</span>
+             alt="TV Globo" class="h-16 w-auto object-contain">
+        <span class="text-xs text-gray-700 mt-1">TV Globo</span>
       </div>
-      <!-- Record -->
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center flex-shrink-0 min-w-[90px]">
         <img src="https://seeklogo.com/images/R/record-2023-logo-506610/record-2023-logo.svg" 
-        <span class="text-xs text-gray-700 mt-2">Record</span>
+             alt="Record" class="h-16 w-auto object-contain">
+        <span class="text-xs text-gray-700 mt-1">Record</span>
       </div>
-      <!-- SBT -->
-      <div class="flex flex-col items-center">
-        <img src="https://seeklogo.com/images/S/sbt-logo-252297/sbt-logo-252297.svg" 
-             alt="SBT" class="h-12 md:h-16 w-auto">
-        <span class="text-xs text-gray-700 mt-2">SBT</span>
+      <div class="flex flex-col items-center flex-shrink-0 min-w-[90px]">
+        <img src="https://seeklogo.com/images/S/sbt-logo-252297.svg" 
+             alt="SBT" class="h-16 w-auto object-contain">
+        <span class="text-xs text-gray-700 mt-1">SBT</span>
       </div>
-      <!-- CNN Brasil -->
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center flex-shrink-0 min-w-[90px]">
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/CNN_Brasil.svg" 
-             alt="CNN Brasil" class="h-12 md:h-16 w-auto">
-        <span class="text-xs text-gray-700 mt-2">CNN Brasil</span>
+             alt="CNN Brasil" class="h-16 w-auto object-contain">
+        <span class="text-xs text-gray-700 mt-1">CNN Brasil</span>
       </div>
     </div>
   </div>
-
   <!-- COMENTÁRIOS -->
   <div class="max-w-4xl mx-auto mt-12 px-4 pb-20">
     <h2 class="text-3xl font-bold text-gray-800 mb-8 border-b-4 border-red-600 pb-2">Comentários</h2>
    
     <div class="space-y-8">
+      <!-- 1º -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/men/43.jpg" class="w-12 h-12 rounded-full object-cover">
         <div class="flex-1">
@@ -83,6 +90,7 @@
           <div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 92</span></div>
         </div>
       </div>
+      <!-- 2º -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/47.jpg" class="w-12 h-12 rounded-full object-cover">
         <div class="flex-1">
@@ -91,6 +99,7 @@
           <div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 81</span></div>
         </div>
       </div>
+      <!-- Restantes -->
       <div class="flex gap-4">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full object-cover">
         <div class="flex-1"><p class="font-semibold">Ana Paula Ferreira <span class="text-gray-500 text-sm">• 2 min</span></p><p class="text-gray-700 mt-1">Todo idoso com diabetes precisa ver isso. Mudou minha vida!</p><div class="flex gap-4 text-sm mt-2"><span class="text-blue-600">👍</span><span class="text-red-500">❤️ 74</span></div></div>
@@ -126,7 +135,6 @@
     </div>
     <p class="text-center text-gray-500 mt-12 text-sm">Você precisa estar logado para comentar</p>
   </div>
-
   <script>
     let viewers = 514;
     const countEl = document.getElementById('viewer-count');
@@ -145,5 +153,3 @@
   </script>
 </body>
 </html>
-
-
