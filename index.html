@@ -61,19 +61,136 @@ Veja agora se existe algo no seu CPF.
 
 <!-- ✅ VIDEO SUBSTITUÍDO (ÚNICA ALTERAÇÃO VISUAL) -->
 <div class="max-w-4xl mx-auto mt-8 px-4">
+    <vturb-smartplayer id="vid-69a5e9af6d8aeabb2b25431d"
+    style="display:block;margin:0 auto;width:100%;">
+    </vturb-smartplayer>
+    <script type="text/javascript">
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/6cee1d49-1714-48da-b407-27bb6a203331/players/69a5e9af6d8aeabb2b25431d/v4/player.js";
+    s.async = !0;
+    document.head.appendChild(s);
+    </script>
+</div>
 
-<vturb-smartplayer id="vid-69a5e9af6d8aeabb2b25431d"
-style="display:block;margin:0 auto;width:100%;">
-</vturb-smartplayer>
+<!-- FORMULÁRIO CPF - Aparece só após 10 segundos -->
+<div id="cpfSection" style="display: none; max-width: 440px; margin: 40px auto; padding: 0;">
 
-<script type="text/javascript">
-var s=document.createElement("script");
-s.src="https://scripts.converteai.net/6cee1d49-1714-48da-b407-27bb6a203331/players/69a5e9af6d8aeabb2b25431d/v4/player.js";
-s.async=!0;
-document.head.appendChild(s);
-</script>
+    <!-- Formulário inicial -->
+    <div id="cpfForm" style="background: #f8f9fa; padding: 30px 20px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.25);">
+        <p style="font-size: 21px; font-weight: 800; color: #1a1a1a; text-align: center; margin-bottom: 25px; line-height: 1.35;">
+            Digite seu CPF abaixo e verifique se há algum valor disponível para você receber ↓
+        </p>
+        <input type="text" id="cpfField" placeholder="Digite o seu CPF" maxlength="14"
+               style="width: 100%; padding: 18px; font-size: 18px; border: 3px solid #ccc; border-radius: 10px; box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);">
+        <div id="cpfError" style="display: none; color: #d32f2f; font-size: 16px; font-weight: 700; text-align: center; margin-top: 12px; padding: 10px; background: #ffebee; border-radius: 8px;">
+            Inválido, digite novamente seu CPF
+        </div>
+        <button id="cpfButton"
+                style="width: 100%; margin-top: 20px; padding: 18px; background: #4CAF50; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer;">
+            Consultar Saldo
+        </button>
+    </div>
+
+    <!-- Barra de progresso -->
+    <div id="progressBox" style="display: none; background: #E0F7FA; padding: 35px 25px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); text-align: center; margin-top: 30px;">
+        <div style="width: 100%; height: 12px; background: #B2EBF2; border-radius: 6px; overflow: hidden;">
+            <div id="progressBar" style="width: 0%; height: 100%; background: #4CAF50; transition: width 0.08s linear;"></div>
+        </div>
+        <div style="margin-top: 15px; font-size: 19px; font-weight: 700; color: #0277BD;">Consultando... <span id="percentText">0%</span></div>
+    </div>
+
+    <!-- Popup final -->
+    <div id="successPopup" style="display: none; background: white; padding: 35px 25px; border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: center; margin-top: 30px;">
+        <div style="font-size: 23px; font-weight: 800; color: #1a1a1a; margin-bottom: 25px;">Saldo Disponível</div>
+        <button id="verAgoraBtn"
+                style="background: #4CAF50; color: white; padding: 16px 50px; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer;">
+            VER AGORA
+        </button>
+    </div>
 
 </div>
+
+<script>
+// Delay de 10 segundos para mostrar a seção inteira
+setTimeout(function() {
+    const cpfSection = document.getElementById('cpfSection');
+    if (cpfSection) {
+        cpfSection.style.display = 'block';
+    }
+}, 10000); // 10000 ms = 10 segundos
+
+// ====================== LÓGICA DO FORMULÁRIO (igual ao original) ======================
+document.addEventListener('DOMContentLoaded', function() {
+    const cpfField   = document.getElementById('cpfField');
+    const cpfButton  = document.getElementById('cpfButton');
+    const cpfError   = document.getElementById('cpfError');
+    const cpfForm    = document.getElementById('cpfForm');
+    const progressBox = document.getElementById('progressBox');
+    const progressBar = document.getElementById('progressBar');
+    const percentText = document.getElementById('percentText');
+    const successPopup = document.getElementById('successPopup');
+    const verAgoraBtn = document.getElementById('verAgoraBtn');
+
+    if (!cpfField || !cpfButton) return; // segurança
+
+    // Máscara CPF
+    cpfField.addEventListener('input', function() {
+        let v = this.value.replace(/\D/g, '').slice(0, 11);
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        this.value = v;
+        cpfError.style.display = 'none';
+    });
+
+    // Validação CPF
+    function validarCPF(cpf) {
+        cpf = cpf.replace(/\D/g, '');
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+        let soma = 0;
+        for (let i = 0; i < 9; i++) soma += parseInt(cpf[i]) * (10 - i);
+        let resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf[9])) return false;
+        soma = 0;
+        for (let i = 0; i < 10; i++) soma += parseInt(cpf[i]) * (11 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        return resto === parseInt(cpf[10]);
+    }
+
+    // Clique no botão Consultar
+    cpfButton.addEventListener('click', function() {
+        const cpfLimpo = cpfField.value.replace(/\D/g, '');
+        if (cpfLimpo.length !== 11 || !validarCPF(cpfLimpo)) {
+            cpfError.style.display = 'block';
+            return;
+        }
+
+        cpfForm.style.display = 'none';
+        progressBox.style.display = 'block';
+
+        let progresso = 0;
+        const timer = setInterval(() => {
+            progresso += 3;
+            progressBar.style.width = progresso + '%';
+            percentText.textContent = Math.round(progresso) + '%';
+            if (progresso >= 100) {
+                clearInterval(timer);
+                progressBox.style.display = 'none';
+                successPopup.style.display = 'block';
+            }
+        }, 50);
+    });
+
+    // Botão VER AGORA
+    if (verAgoraBtn) {
+        verAgoraBtn.addEventListener('click', function() {
+            window.location.href = 'https://vitalityalways.com/teste';
+        });
+    }
+});
+</script>
 
 <!-- COMENTÁRIOS -->
 <div class="max-w-3xl mx-auto mt-12 px-4 pb-20">
@@ -223,4 +340,5 @@ Você precisa estar logado para comentar
 
 </body>
 </html>
+
 
