@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Notícias Brasil</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- PRELOAD PARA CARREGAR O VIDEO MAIS RÁPIDO -->
+<script>
+!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
+</script>
+
+<link rel="preload" href="https://scripts.converteai.net/6cee1d49-1714-48da-b407-27bb6a203331/players/69a5e9af6d8aeabb2b25431d/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/6cee1d49-1714-48da-b407-27bb6a203331/69a5e8d9260b750c46aa8b15/main.m3u8" as="fetch">
+
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+</head>
+
+<body class="bg-white font-sans">
+
+<header class="bg-red-600">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="text-white text-3xl font-bold tracking-tight">g1</div>
+
+<nav class="hidden md:flex gap-6 text-white text-sm font-semibold">
+<a href="#" class="hover:underline">Política</a>
+<a href="#" class="hover:underline">Economia</a>
+<a href="#" class="hover:underline">Saúde</a>
+<a href="#" class="hover:underline">Tecnologia</a>
+<a href="#" class="hover:underline">Mundo</a>
+</nav>
+
+<div class="text-white text-xl">
+<i class="fa-solid fa-magnifying-glass"></i>
+</div>
+</div>
+</header>
+
+<section class="max-w-4xl mx-auto mt-8 px-4 text-center">
+<h1 class="text-red-600 text-4xl md:text-5xl font-bold leading-tight">
+Milhares de brasileiros estão descobrindo valores esquecidos entre R$500 e R$10.000
+</h1>
+
+<p class="text-gray-700 mt-4 text-lg">
+Veja agora se existe algo no seu CPF.
+</p>
+</section>
+
+<div class="bg-white border-b-4 border-red-600 py-3 text-center mt-6">
+<span id="viewer-count" class="text-red-600 text-2xl font-bold">514</span>
+<span class="text-red-600 text-2xl font-bold"> pessoas assistindo agora...</span>
+</div>
+
+<!-- VIDEO VTURB -->
+<div class="max-w-4xl mx-auto mt-8 px-4">
+    <vturb-smartplayer id="vid-69a5e9af6d8aeabb2b25431d"
+    style="display:block;margin:0 auto;width:100%;">
+    </vturb-smartplayer>
+    <script type="text/javascript">
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/6cee1d49-1714-48da-b407-27bb6a203331/players/69a5e9af6d8aeabb2b25431d/v4/player.js";
+    s.async = !0;
+    document.head.appendChild(s);
+    </script>
+</div>
+
+<!-- FORMULÁRIO -->
+<div id="cpfSection" style="max-width: 440px; margin: 40px auto; padding: 0;">
+
+    <div id="cpfForm" style="background: #f8f9fa; padding: 30px 20px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.25);">
+        <p style="font-size: 21px; font-weight: 800; color: #1a1a1a; text-align: center; margin-bottom: 25px; line-height: 1.35;">
+            Digite seu CPF abaixo e verifique se há algum valor disponível para você receber ↓
+        </p>
+        <input type="text" id="cpfField" placeholder="Digite o seu CPF" maxlength="14"
+               style="width: 100%; padding: 18px; font-size: 18px; border: 3px solid #ccc; border-radius: 10px; box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);">
+        <div id="cpfError" style="display: none; color: #d32f2f; font-size: 16px; font-weight: 700; text-align: center; margin-top: 12px; padding: 10px; background: #ffebee; border-radius: 8px;">
+            Inválido, digite novamente seu CPF
+        </div>
+        <button id="cpfButton"
+                style="width: 100%; margin-top: 20px; padding: 18px; background: #4CAF50; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold; cursor: pointer;">
+            Consultar Saldo
+        </button>
+    </div>
+
+    <div id="progressBox" style="display: none; background: #E0F7FA; padding: 35px 25px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); text-align: center; margin-top: 30px;">
+        <div style="width: 100%; height: 12px; background: #B2EBF2; border-radius: 6px; overflow: hidden;">
+            <div id="progressBar" style="width: 0%; height: 100%; background: #4CAF50; transition: width 0.08s linear;"></div>
+        </div>
+        <div style="margin-top: 15px; font-size: 19px; font-weight: 700; color: #0277BD;">Consultando... <span id="percentText">0%</span></div>
+    </div>
+
+    <div id="successPopup" style="display: none; background: white; padding: 35px 25px; border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); text-align: center; margin-top: 30px;">
+        <div style="font-size: 23px; font-weight: 800; color: #1a1a1a; margin-bottom: 15px;">Saldo Disponível: R$3.875,00</div>
+        <div id="cpfConfirmado" style="font-size: 18px; font-weight: 600; color: #333; margin-bottom: 25px;">
+            Para o CPF: <span id="cpfMostrado"></span>
+        </div>
+        <button id="verAgoraBtn"
+                style="background: #4CAF50; color: white; padding: 16px 50px; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer;">
+            R$ 3.875,00
+        </button>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cpfField     = document.getElementById('cpfField');
+    const cpfButton    = document.getElementById('cpfButton');
+    const cpfError     = document.getElementById('cpfError');
+    const cpfForm      = document.getElementById('cpfForm');
+    const progressBox  = document.getElementById('progressBox');
+    const progressBar  = document.getElementById('progressBar');
+    const percentText  = document.getElementById('percentText');
+    const successPopup = document.getElementById('successPopup');
+    const cpfMostrado  = document.getElementById('cpfMostrado');
+    const verAgoraBtn  = document.getElementById('verAgoraBtn');
+
+    if (!cpfField || !cpfButton) return;
+
+    cpfField.addEventListener('input', function() {
+        let v = this.value.replace(/\D/g, '').slice(0, 11);
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        this.value = v;
+        cpfError.style.display = 'none';
+    });
+
+    function validarCPF(cpf) {
+        cpf = cpf.replace(/\D/g, '');
+        if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+        let soma = 0;
+        for (let i = 0; i < 9; i++) soma += parseInt(cpf[i]) * (10 - i);
+        let resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf[9])) return false;
+        soma = 0;
+        for (let i = 0; i < 10; i++) soma += parseInt(cpf[i]) * (11 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        return resto === parseInt(cpf[10]);
+    }
+
+    cpfButton.addEventListener('click', function() {
+        const cpfLimpo = cpfField.value.replace(/\D/g, '');
+        if (cpfLimpo.length !== 11 || !validarCPF(cpfLimpo)) {
+            cpfError.style.display = 'block';
+            return;
+        }
+
+        cpfMostrado.textContent = cpfField.value;
+
+        cpfForm.style.display = 'none';
+        progressBox.style.display = 'block';
+
+        let progresso = 0;
+        const timer = setInterval(() => {
+            progresso += 3;
+            progressBar.style.width = progresso + '%';
+            percentText.textContent = Math.round(progresso) + '%';
+            if (progresso >= 100) {
+                clearInterval(timer);
+                progressBox.style.display = 'none';
+                successPopup.style.display = 'block';
+            }
+        }, 50);
+    });
+
+    if (verAgoraBtn) {
+        verAgoraBtn.addEventListener('click', function() {
+            alert('CPF confirmado! Próxima etapa em breve...');
+        });
+    }
+});
+</script>
+
+<!-- COMENTÁRIOS -->
+<div class="max-w-3xl mx-auto mt-12 px-4 pb-20">
+
+<h2 class="text-2xl font-bold text-gray-800 mb-6">Comentários</h2>
+
+<div class="space-y-6">
+
+<!-- 1 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Marcos Almeida</p>
+<p class="text-gray-800 text-sm mt-1">Assisti o vídeo inteiro e realmente deu certo. Recuperei 4.390 e já caiu na conta.</p>
+<img src="https://i.ibb.co/fGNKGzLT/ava-screen-1-1-1.jpg" class="mt-3 rounded-xl w-full">
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>12 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 34 • ❤️ 11</p>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1590086782957-93c06ef21604?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Sandra Ribeiro</p>
+<p class="text-gray-800 text-sm mt-1">Gostei muito da explicação Carlos, diferente de tudo que já vi e recebi no mesmo dia</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>15 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 21</p>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Paulo Mendes</p>
+<p class="text-gray-800 text-sm mt-1">Informação clara e direta, parabéns pela matéria.</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>18 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 17</p>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Carlos Batista</p>
+<p class="text-gray-800 text-sm mt-1">Eu e minha esposa conseguimos sacar quase 6.000,00 reais juntos, obrigado Carlos.</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>21 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 26 • ❤️ 4</p>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Luciana Freitas</p>
+<p class="text-gray-800 text-sm mt-1">Carlos fico agradecida por nos ensinar, acabou de cair em minha conta agora já vou pagar o aluguel e ainda vai sobrar metade hehehe</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>24 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 13</p>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Marcos Teixeira</p>
+<p class="text-gray-800 text-sm mt-1">Muito bem explicado, raro ver algo assim hoje.</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>27 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 19</p>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Renata Moraes</p>
+<p class="text-gray-800 text-sm mt-1">Não conhecia isso, quando fui ver eu tinha quase 4.000,00 de saldo lá, consegui receber todo o dinheiro</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>30 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 22</p>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Helena Duarte</p>
+<p class="text-gray-800 text-sm mt-1">Pra mim deu certo também e já enviei no grupo da família 😂</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>34 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 15 • ❤️ 3</p>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Antônio Lopes</p>
+<p class="text-gray-800 text-sm mt-1">Conteúdo de utilidade pública, se não sacarmos vai ficar tudo pra esse governo ladrão</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>38 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 28</p>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="flex gap-3">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200" class="w-12 h-12 rounded-full object-cover">
+<div class="bg-gray-100 rounded-2xl p-4 w-full">
+<p class="font-semibold text-sm">Márcia Gonçalves</p>
+<p class="text-gray-800 text-sm mt-1">Carlos obrigado minha mãe sacou quase 6.000 mil reais.</p>
+<div class="flex gap-4 text-xs text-gray-500 mt-2">
+<span>👍 Curtir</span><span>❤️ Amei</span><span>💬 Responder</span><span>41 min</span>
+</div>
+<p class="text-xs text-gray-600 mt-1">👍 20</p>
+</div>
+</div>
+
+</div>
+
+<p class="text-center text-gray-500 mt-10 text-sm">
+Você precisa estar logado para comentar
+</p>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
