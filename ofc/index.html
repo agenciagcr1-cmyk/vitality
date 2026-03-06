@@ -55,9 +55,30 @@ Veja agora se existe algo no seu CPF.
 </section>
 
 <div class="bg-white border-b-4 border-red-600 py-3 text-center mt-6">
-<span id="viewer-count" class="text-red-600 text-2xl font-bold">514</span>
-<span class="text-red-600 text-2xl font-bold"> pessoas assistindo agora...</span>
+    <span id="viewer-count" class="text-red-600 text-2xl font-bold">514</span>
+    <span class="text-red-600 text-2xl font-bold"> pessoas assistindo agora...</span>
 </div>
+
+<script>
+    (function updateViewerCount() {
+        const viewerCount = document.getElementById('viewer-count');
+        if (!viewerCount) return;
+
+        let viewers = 514; // valor inicial
+
+        function increment() {
+            const add = Math.floor(Math.random() * 3) + 1; // aleatório: 1, 2 ou 3
+            viewers += add;
+            viewerCount.textContent = viewers;
+
+            // Intervalo aleatório: 2s a 10s (2000ms a 10000ms)
+            const nextInterval = Math.floor(Math.random() * 8000) + 2000;
+            setTimeout(increment, nextInterval);
+        }
+
+        increment(); // inicia o loop
+    })();
+</script>
 
 <!-- VIDEO VTURB -->
 <div class="max-w-4xl mx-auto mt-8 px-4">
