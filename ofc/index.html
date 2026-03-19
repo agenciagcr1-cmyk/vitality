@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The New York Times</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     body {
@@ -13,117 +12,111 @@
       color: #000;
       margin: 0;
       padding: 0;
+      line-height: 1.4;
     }
     .nyt-header {
       border-bottom: 1px solid #000;
-      padding: 8px 16px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 0 auto;
     }
     .menu-icon {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
     }
     .nyt-logo {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: bold;
-      letter-spacing: -0.5px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: -0.5px;
     }
     .profile-icon {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       cursor: pointer;
     }
     .content {
-      max-width: 700px;
+      max-width: 720px;
       margin: 40px auto;
       padding: 0 20px;
       text-align: left;
     }
     .urgent-title {
-      font-size: 2.5rem;
-      line-height: 1.1;
+      font-size: 2.1rem;          /* Reduzido para não ficar gigante */
+      line-height: 1.15;
       font-weight: 900;
-      margin-bottom: 16px;
+      margin: 0 0 12px 0;
       color: #000;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
     }
     .subtitle {
       font-size: 1.25rem;
-      line-height: 1.4;
-      color: #333;
-      margin-bottom: 8px;
+      line-height: 1.35;
+      color: #222;
+      margin: 0 0 8px 0;
+      font-weight: 500;
     }
-    .small-text {
-      font-size: 1rem;
-      color: #555;
-      font-style: italic;
-    }
-    .video-container {
+    .video-section {
       position: relative;
-      margin: 24px 0;
+      margin: 32px 0;
       background: #f8f8f8;
       aspect-ratio: 16 / 9;
+      overflow: hidden;
     }
+    /* Seu vídeo ou imagem aqui */
     .video-placeholder {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
     .play-overlay {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 120px;
-      height: 120px;
-      background: rgba(0,0,0,0.4);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
       text-align: center;
+      color: white;
       cursor: pointer;
     }
-    .play-circle {
-      width: 80px;
-      height: 80px;
-      background: #c00; /* vermelho NYT */
+    .play-button {
+      width: 100px;
+      height: 100px;
+      background: #c00;  /* Vermelho clássico NYT */
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 8px;
-      position: relative;
+      margin: 0 auto 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     .play-triangle {
       width: 0;
       height: 0;
-      border-left: 20px solid white;
-      border-top: 14px solid transparent;
-      border-bottom: 14px solid transparent;
-      margin-left: 6px;
+      border-left: 28px solid white;
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      margin-left: 8px;
     }
-    .play-text {
-      font-size: 0.9rem;
+    .click-text {
+      font-size: 1.1rem;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
     }
     .arrow {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #c00;
-      margin-top: 4px;
+      margin-top: 8px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Cabeçalho estilo NYT -->
+  <!-- Cabeçalho NYT -->
   <header class="nyt-header">
     <i class="fas fa-bars menu-icon"></i>
     <div class="nyt-logo">The New York Times</div>
@@ -140,20 +133,19 @@
       Over 15,000 Americans have already reversed Alzheimer’s for less than $45
     </p>
 
-    <p class="small-text">
-      Over 15,000 Americans have already reversed Alzheimer’s for less than $45
-    </p>
+    <!-- Área para o seu vídeo existente -->
+    <div class="video-section">
+      <!-- Insira seu vídeo aqui (exemplo: tag video ou iframe do YouTube/Vimeo/etc.) -->
+      <!-- <video controls src="seu-video.mp4" class="video-placeholder"></video> -->
+      <!-- Ou se for imagem estática por enquanto: -->
+      <!-- <img src="sua-imagem-do-video.jpg" alt="Video" class="video-placeholder"> -->
 
-    <!-- Área do vídeo / imagem com play -->
-    <div class="video-container">
-      <!-- Coloque aqui a URL da sua imagem ou vídeo de fundo -->
-      <img src="SUA_IMAGEM_AQUI.jpg" alt="Video placeholder" class="video-placeholder">
-
+      <!-- Overlay do play (clique leva pro vídeo real, você pode adicionar onclick ou link) -->
       <div class="play-overlay">
-        <div class="play-circle">
+        <div class="play-button">
           <div class="play-triangle"></div>
         </div>
-        <div class="play-text">CLICK HERE<br>TO LISTEN</div>
+        <div class="click-text">CLICK HERE<br>TO LISTEN</div>
         <div class="arrow">↓</div>
       </div>
     </div>
