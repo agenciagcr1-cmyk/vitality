@@ -1,84 +1,166 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal Notícias Brasil</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<!-- PRELOAD PARA CARREGAR O VIDEO MAIS RÁPIDO -->
-<script>
-!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
-</script>
-
-<link rel="preload" href="https://scripts.converteai.net/6cee1d49-1714-48da-b407-27bb6a203331/players/69a5e9af6d8aeabb2b25431d/v4/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/6cee1d49-1714-48da-b407-27bb6a203331/69a5e8d9260b750c46aa8b15/main.m3u8" as="fetch">
-
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://api.vturb.com.br">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The New York Times</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: white;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+    .nyt-header {
+      border-bottom: 1px solid #000;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .nyt-logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .profile-icon {
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .content {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: left;
+    }
+    .urgent-title {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #000;
+    }
+    .subtitle {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .small-text {
+      font-size: 1rem;
+      color: #555;
+      font-style: italic;
+    }
+    .video-container {
+      position: relative;
+      margin: 24px 0;
+      background: #f8f8f8;
+      aspect-ratio: 16 / 9;
+    }
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+    }
+    .play-circle {
+      width: 80px;
+      height: 80px;
+      background: #c00; /* vermelho NYT */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .play-triangle {
+      width: 0;
+      height: 0;
+      border-left: 20px solid white;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      margin-left: 6px;
+    }
+    .play-text {
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .arrow {
+      font-size: 2.5rem;
+      color: #c00;
+      margin-top: 4px;
+    }
+  </style>
 </head>
+<body>
 
-<body class="bg-white font-sans">
+  <!-- Cabeçalho estilo NYT -->
+  <header class="nyt-header">
+    <i class="fas fa-bars menu-icon"></i>
+    <div class="nyt-logo">The New York Times</div>
+    <i class="fas fa-user-circle profile-icon"></i>
+  </header>
 
-<header class="bg-red-600">
-<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-<div class="text-white text-3xl font-bold tracking-tight">g1</div>
+  <!-- Conteúdo principal -->
+  <main class="content">
+    <h1 class="urgent-title">
+      URGENT: Scientists Uncover a Natural Cure For Memory Loss That Can be Made at Home
+    </h1>
 
-<nav class="hidden md:flex gap-6 text-white text-sm font-semibold">
-<a href="#" class="hover:underline">Política</a>
-<a href="#" class="hover:underline">Economia</a>
-<a href="#" class="hover:underline">Saúde</a>
-<a href="#" class="hover:underline">Tecnologia</a>
-<a href="#" class="hover:underline">Mundo</a>
-</nav>
+    <p class="subtitle">
+      Over 15,000 Americans have already reversed Alzheimer’s for less than $45
+    </p>
 
-<div class="text-white text-xl">
-<i class="fa-solid fa-magnifying-glass"></i>
-</div>
-</div>
-</header>
+    <p class="small-text">
+      Over 15,000 Americans have already reversed Alzheimer’s for less than $45
+    </p>
 
-<section class="max-w-4xl mx-auto mt-8 px-4 text-center">
-<h1 class="text-red-600 text-4xl md:text-5xl font-bold leading-tight">
-Milhares de brasileiros estão descobrindo valores esquecidos entre R$500 e R$10.000
-</h1>
+    <!-- Área do vídeo / imagem com play -->
+    <div class="video-container">
+      <!-- Coloque aqui a URL da sua imagem ou vídeo de fundo -->
+      <img src="SUA_IMAGEM_AQUI.jpg" alt="Video placeholder" class="video-placeholder">
 
-<p class="text-gray-700 mt-4 text-lg">
-Veja agora se existe algo no seu CPF.
-</p>
-</section>
+      <div class="play-overlay">
+        <div class="play-circle">
+          <div class="play-triangle"></div>
+        </div>
+        <div class="play-text">CLICK HERE<br>TO LISTEN</div>
+        <div class="arrow">↓</div>
+      </div>
+    </div>
+  </main>
 
-<div class="bg-white border-b-4 border-red-600 py-3 text-center mt-6">
-    <span id="viewer-count" class="text-red-600 text-2xl font-bold">514</span>
-    <span class="text-red-600 text-2xl font-bold"> pessoas assistindo agora...</span>
-</div>
-
-<script>
-    (function updateViewerCount() {
-        const viewerCount = document.getElementById('viewer-count');
-        if (!viewerCount) return;
-
-        let viewers = 514; // valor inicial
-
-        function increment() {
-            const add = Math.floor(Math.random() * 3) + 1; // aleatório: 1, 2 ou 3
-            viewers += add;
-            viewerCount.textContent = viewers;
-
-            // Intervalo aleatório: 2s a 10s (2000ms a 10000ms)
-            const nextInterval = Math.floor(Math.random() * 8000) + 2000;
-            setTimeout(increment, nextInterval);
-        }
-
-        increment(); // inicia o loop
-    })();
-</script>
+</body>
+</html>
 
 <!-- VIDEO VTURB -->
 <div class="max-w-4xl mx-auto mt-8 px-4">
