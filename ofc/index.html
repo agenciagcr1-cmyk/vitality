@@ -44,13 +44,15 @@
       text-align: left;
     }
     .urgent-title {
-      font-size: 1.95rem;          /* Ajustado exatamente como pedido */
-      line-height: 1.15;
+      font-size: 1.95rem;
+      line-height: 1.12;           /* Ajustado levemente para quebrar melhor as linhas */
       font-weight: 900;
       margin: 0 0 12px 0;
       color: #000;
-      text-transform: uppercase;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;      /* Ajuste fino para ajudar no equilíbrio */
+    }
+    .urgent-title strong {
+      text-transform: uppercase;   /* Só o "URGENT:" fica maiúsculo */
     }
     .subtitle {
       font-size: 1.25rem;
@@ -73,14 +75,14 @@
   <!-- Conteúdo principal -->
   <main class="content">
     <h1 class="urgent-title">
-      URGENT: Scientists Uncover a Natural Cure For Memory Loss That Can be Made at Home
+      <strong>URGENT:</strong> Scientists Uncover a Natural Cure For Memory Loss That Can Be Made at Home
     </h1>
 
     <p class="subtitle">
       Over 15,000 Americans have already reversed Alzheimer’s for less than $45
     </p>
 
-    <!-- Aqui você continua com o seu player VTURB ou o que quiser colocar abaixo -->
+    <!-- Coloque aqui o seu player VTURB ou o conteúdo que quiser abaixo -->
 
   </main>
 
