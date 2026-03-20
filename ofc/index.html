@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The New York Times</title>
+
+  <!-- Preload e DNS-prefetch do VTURB para carregar o vídeo mais rápido -->
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69bc9152ab9c7e1e9b757fa6/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="preload" href="https://cdn.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/69bc911c237e0fc6aeba4123/main.m3u8" as="fetch">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
     body {
@@ -45,14 +56,14 @@
     }
     .urgent-title {
       font-size: 1.95rem;
-      line-height: 1.12;           /* Ajustado levemente para quebrar melhor as linhas */
+      line-height: 1.12; /* Ajustado levemente para quebrar melhor as linhas */
       font-weight: 900;
       margin: 0 0 12px 0;
       color: #000;
-      letter-spacing: -0.4px;      /* Ajuste fino para ajudar no equilíbrio */
+      letter-spacing: -0.4px; /* Ajuste fino para ajudar no equilíbrio */
     }
     .urgent-title strong {
-      text-transform: uppercase;   /* Só o "URGENT:" fica maiúsculo */
+      text-transform: uppercase; /* Só o "URGENT:" fica maiúsculo */
     }
     .subtitle {
       font-size: 1.25rem;
@@ -64,68 +75,51 @@
   </style>
 </head>
 <body>
-
   <!-- Cabeçalho NYT -->
   <header class="nyt-header">
     <i class="fas fa-bars menu-icon"></i>
     <div class="nyt-logo">The New York Times</div>
     <i class="fas fa-user-circle profile-icon"></i>
   </header>
-
   <!-- Conteúdo principal -->
   <main class="content">
     <h1 class="urgent-title">
       <strong>URGENT:</strong> Scientists Uncover a Natural Cure For Memory Loss That Can Be Made at Home
     </h1>
-
     <p class="subtitle">
       Over 15,000 Americans have already reversed Alzheimer’s for less than $45
     </p>
-
     <!-- Coloque aqui o seu player VTURB ou o conteúdo que quiser abaixo -->
-
   </main>
 
+  <!-- VIDEO VTURB -->
+  <vturb-smartplayer id="vid-69bc9152ab9c7e1e9b757fa6"
+                     style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
+  </vturb-smartplayer>
+  <script type="text/javascript">
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69bc9152ab9c7e1e9b757fa6/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+  </script>
+  <!-- Espaçador branco embaixo do vídeo -->
+  <div style="margin-bottom: 90px;"></div>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '26564244729865610');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </body>
 </html>
-
-<!-- VIDEO VTURB -->
-<vturb-smartplayer id="vid-69bc9152ab9c7e1e9b757fa6" 
-                   style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
-</vturb-smartplayer>
-
-<script type="text/javascript">
-  var s = document.createElement("script");
-  s.src = "https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69bc9152ab9c7e1e9b757fa6/v4/player.js";
-  s.async = true;
-  document.head.appendChild(s);
-</script>
-
-<!-- Espaçador branco embaixo do vídeo -->
-<div style="margin-bottom: 90px;"></div>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '26564244729865610');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-
-
-
-
-
-
-
