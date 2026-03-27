@@ -4,19 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The New York Times</title>
-<!-- PRELOAD VTURB -->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
 <link rel="preload" href="https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69c58176c9da180d96de2431/v4/player.js" as="script">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
 /* ===== BASE ===== */
-body{
-  margin:0;
-  background:#fff;
-  color:#111;
-  font-family:Arial, Helvetica, sans-serif;
-}
+body{ margin:0; background:#fff; color:#111; font-family:Arial, Helvetica, sans-serif; }
+
 /* ===== HEADER ===== */
 .nyt-header{
   border-bottom:1px solid #e2e2e2;
@@ -27,15 +22,14 @@ body{
   max-width:1200px;
   margin:auto;
 }
-.menu-icon,.profile-icon{
-  font-size:1.5rem;
-}
+.menu-icon,.profile-icon{ font-size:1.5rem; }
 .nyt-logo{
   font-family:Georgia,"Times New Roman",serif;
   font-size:1.8rem;
   font-weight:700;
   letter-spacing:-0.4px;
 }
+
 /* ===== CONTENT ===== */
 .content{
   max-width:720px;
@@ -43,51 +37,52 @@ body{
   padding:0 18px;
   font-family:Georgia,"Times New Roman",serif;
 }
-/* META */
-.meta{
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:.75rem;
-  color:#6b6b6b;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  margin-bottom:18px;
-}
-/* HEADLINE */
-.urgent-title{
-  font-size:2rem;
-  line-height:1.12;
-  font-weight:700;
-  margin:0 0 14px;
-  letter-spacing:-0.4px;
-}
-.urgent-title strong{
-  text-transform:uppercase;
-}
-.highlight{
-  color:#b11226;
-}
-/* SUBHEAD */
-.subtitle{
-  font-size:1.2rem;
-  color:#444;
-  line-height:1.5;
-  margin-bottom:14px;
-}
-/* AUTHOR */
-.author{
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:.9rem;
-  color:#555;
-  margin-bottom:26px;
-}
-/* VIDEO */
-.video-wrapper{
-  width:100%;
-  max-width:400px;
-  margin:0 auto;
+.meta{ font-family:Arial, Helvetica, sans-serif; font-size:.75rem; color:#6b6b6b; text-transform:uppercase; letter-spacing:.05em; margin-bottom:18px; }
+.urgent-title{ font-size:2rem; line-height:1.12; font-weight:700; margin:0 0 14px; letter-spacing:-0.4px; }
+.urgent-title strong{ text-transform:uppercase; }
+.highlight{ color:#b11226; }
+.subtitle{ font-size:1.2rem; color:#444; line-height:1.5; margin-bottom:14px; }
+.author{ font-family:Arial, Helvetica, sans-serif; font-size:.9rem; color:#555; margin-bottom:26px; }
+.video-wrapper{ width:100%; max-width:400px; margin:0 auto; }
+
+/* ==================== CONTADOR CENTRALIZADO ==================== */
+.live-counter {
+  background-color: #ffe6e6;
+  color: #d32f2f;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(211, 47, 47, 0.18);
+  margin: 25px auto 35px;
+  max-width: fit-content;
+  user-select: none;
 }
 
-/* ==================== OFERTA PRESGERA ==================== */
+.live-counter #counter {
+  color: #000000;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.live-counter .watching-text {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .live-counter {
+    font-size: 15.5px;
+    padding: 12px 24px;
+    margin: 20px auto 30px;
+  }
+}
+
+/* ==================== OFERTA (EXATAMENTE IGUAL AO SEU ORIGINAL) ==================== */
 .pg-grid{display:flex;gap:6px;justify-content:center;align-items:flex-end;max-width:760px;margin:40px auto 0}
 .pg-card{background:#fff;border:2px solid #ddd;border-radius:8px;overflow:visible;flex:1;max-width:230px;display:flex;flex-direction:column;position:relative}
 .pg-card.hot{background:linear-gradient(180deg,#6a2a9a 0%,#4a1a7a 100%);border:3px solid #f0c040}
@@ -153,135 +148,164 @@ body{
 </style>
 </head>
 <body>
+
 <header class="nyt-header">
   <i class="fas fa-bars menu-icon"></i>
   <div class="nyt-logo">The New York Times</div>
   <i class="fas fa-user-circle profile-icon"></i>
 </header>
+
 <main class="content">
-<div class="meta" id="publishDate">
-Health | Science
-</div>
-<h1 class="urgent-title">
-<strong>URGENT:</strong> Scientists Warn Neuropathy Sufferers About This
-“<span class="highlight">Red Vitamin</span>”
-</h1>
-<p class="subtitle">
-Over 15,000 Americans say their numbness and nerve pain started improving after discovering it.
-</p>
-<div class="author">
-By Dr. Satoh | Health Correspondent
-</div>
-<!-- VIDEO -->
-<div class="video-wrapper">
-<vturb-smartplayer id="vid-69c58176c9da180d96de2431"
-style="display:block;width:100%;"></vturb-smartplayer>
-</div>
+  <div class="meta" id="publishDate">Health | Science</div>
+  
+  <h1 class="urgent-title">
+    <strong>URGENT:</strong> Scientists Warn Neuropathy Sufferers About This “<span class="highlight">Red Vitamin</span>”
+  </h1>
+  
+  <p class="subtitle">
+    Over 15,000 Americans say their numbness and nerve pain started improving after discovering it.
+  </p>
+  
+  <div class="author">By Dr. Satoh | Health Correspondent</div>
 
-<!-- ==================== OFERTA PRESGERA (APARECE ABAIXO DO VÍDEO) ==================== -->
-<div class="pg-oferta" style="display:none; margin-top:40px;">
-  <div class="pg-grid">
-
-    <!-- BASIC -->
-    <div class="pg-card basic">
-      <div class="pg-badge">BASIC</div>
-      <div class="pg-body">
-        <div class="pg-row">
-          <div class="pg-img-wrap">
-            <img src="https://vitalityalways.com/ofc/kit-2-potes.png" alt="2 Bottles">
-          </div>
-          <div class="pg-info">
-            <div class="pg-bottles">2 BOTTLES</div>
-            <div class="pg-supply">60 Day Supply</div>
-            <div class="pg-price"><sup>$</sup>79<sub>/Bottle</sub></div>
-            <ul class="pg-feats">
-              <li class="no"><span class="icon">✕</span>FREE BONUSES!</li>
-              <li class="no"><span class="icon">✕</span>FAST SHIPPING</li>
-              <li class="no"><span class="icon">✕</span>FREE SHIPPING</li>
-            </ul>
-          </div>
-        </div>
-        <a href="https://presgera.mycartpanda.com/checkout/183593596:1?afid=NOQDWwzty4" class="pg-btn">🛒 BUY NOW</a>
-        <div class="pg-cards">
-          <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
-          <img src="https://img.icons8.com/color/48/mastercard.png" alt="MC">
-          <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
-          <img src="https://img.icons8.com/color/48/discover.png" alt="Discover">
-        </div>
-        <div class="pg-total">TOTAL: <s>$358</s> <b>$158</b></div>
-      </div>
-    </div>
-
-    <!-- MOST POPULAR -->
-    <div class="pg-card hot">
-      <div class="pg-badge">⭐ MOST POPULAR</div>
-      <div class="pg-body">
-        <div class="pg-row">
-          <div class="pg-img-wrap">
-            <img src="https://vitalityalways.com/ofc/Presgera-pote-6.png" alt="6 Bottles">
-            <div class="pg-save"><span>SAVE</span><b>$780</b><span>TODAY</span></div>
-            <div class="pg-vip">👑 VIP BONUS<br>EXCLUSIVE AREA</div>
-            <div class="pg-bonus">+4 BONUS</div>
-          </div>
-          <div class="pg-info">
-            <div class="pg-bottles">6 BOTTLES</div>
-            <div class="pg-supply">180 Day Supply</div>
-            <div class="pg-price"><sup>$</sup>49<sub>/Bottle</sub></div>
-            <ul class="pg-feats">
-              <li class="yes"><span class="icon">✓</span>4 FREE BONUSES!</li>
-              <li class="yes"><span class="icon">✓</span>FAST & FREE SHIPPING</li>
-              <li class="yes"><span class="icon">✓</span>60 DAYS GUARANTEE</li>
-            </ul>
-          </div>
-        </div>
-        <a href="https://presgera.mycartpanda.com/checkout/153654596:1?afid=NOQDWwzty4" class="pg-btn">🛒 BUY NOW</a>
-        <div class="pg-cards">
-          <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
-          <img src="https://img.icons8.com/color/48/mastercard.png" alt="MC">
-          <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
-          <img src="https://img.icons8.com/color/48/discover.png" alt="Discover">
-        </div>
-        <div class="pg-total">TOTAL: <s>$1074</s> <b>$294</b></div>
-      </div>
-    </div>
-
-    <!-- STANDARD -->
-    <div class="pg-card standard">
-      <div class="pg-badge">STANDARD</div>
-      <div class="pg-body">
-        <div class="pg-row">
-          <div class="pg-img-wrap">
-            <img src="https://vitalityalways.com/ofc/Presgera-pote-3.png" alt="3 Bottles">
-            <div class="pg-save"><span>SAVE</span><b>$330</b><span>TODAY</span></div>
-            <div class="pg-bonus">+2 BONUS</div>
-          </div>
-          <div class="pg-info">
-            <div class="pg-bottles">3 BOTTLES</div>
-            <div class="pg-supply">90 Day Supply</div>
-            <div class="pg-price"><sup>$</sup>69<sub>/Bottle</sub></div>
-            <ul class="pg-feats">
-              <li class="yel"><span class="icon">✓</span>2 FREE BONUSES!</li>
-              <li class="yel"><span class="icon">✓</span>FAST & FREE SHIPPING</li>
-              <li class="yes"><span class="icon">✓</span>60 DAYS GUARANTEE</li>
-            </ul>
-          </div>
-        </div>
-        <a href="https://presgera.mycartpanda.com/checkout/153654595:1?afid=NOQDWwzty4" class="pg-btn">🛒 BUY NOW</a>
-        <div class="pg-cards">
-          <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
-          <img src="https://img.icons8.com/color/48/mastercard.png" alt="MC">
-          <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
-          <img src="https://img.icons8.com/color/48/discover.png" alt="Discover">
-        </div>
-        <div class="pg-total">TOTAL: <s>$537</s> <b>$207</b></div>
-      </div>
-    </div>
-
+  <!-- VIDEO -->
+  <div class="video-wrapper">
+    <vturb-smartplayer id="vid-69c58176c9da180d96de2431" style="display:block;width:100%;"></vturb-smartplayer>
   </div>
-</div>
 
-<div style="margin-bottom:90px;"></div>
+  <!-- CONTADOR CENTRALIZADO -->
+  <div style="text-align: center;">
+    <div class="live-counter">
+      <span id="counter">512</span>
+      <span class="watching-text">people watching now...</span>
+    </div>
+  </div>
+
+  <!-- OFERTA PRESGERA (EXATAMENTE IGUAL AO ORIGINAL) -->
+  <div class="pg-oferta" style="display:none; margin-top:40px;">
+    <div class="pg-grid">
+      <!-- BASIC -->
+      <div class="pg-card basic">
+        <div class="pg-badge">BASIC</div>
+        <div class="pg-body">
+          <div class="pg-row">
+            <div class="pg-img-wrap">
+              <img src="https://vitalityalways.com/ofc/kit-2-potes.png" alt="2 Bottles">
+            </div>
+            <div class="pg-info">
+              <div class="pg-bottles">2 BOTTLES</div>
+              <div class="pg-supply">60 Day Supply</div>
+              <div class="pg-price"><sup>$</sup>79<sub>/Bottle</sub></div>
+              <ul class="pg-feats">
+                <li class="no"><span class="icon">✕</span>FREE BONUSES!</li>
+                <li class="no"><span class="icon">✕</span>FAST SHIPPING</li>
+                <li class="no"><span class="icon">✕</span>FREE SHIPPING</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://presgera.mycartpanda.com/checkout/183593596:1?afid=NOQDWwzty4" class="pg-btn">🛒 BUY NOW</a>
+          <div class="pg-cards">
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="MC">
+            <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
+            <img src="https://img.icons8.com/color/48/discover.png" alt="Discover">
+          </div>
+          <div class="pg-total">TOTAL: <s>$358</s> <b>$158</b></div>
+        </div>
+      </div>
+
+      <!-- MOST POPULAR -->
+      <div class="pg-card hot">
+        <div class="pg-badge">⭐ MOST POPULAR</div>
+        <div class="pg-body">
+          <div class="pg-row">
+            <div class="pg-img-wrap">
+              <img src="https://vitalityalways.com/ofc/Presgera-pote-6.png" alt="6 Bottles">
+              <div class="pg-save"><span>SAVE</span><b>$780</b><span>TODAY</span></div>
+              <div class="pg-vip">👑 VIP BONUS<br>EXCLUSIVE AREA</div>
+              <div class="pg-bonus">+4 BONUS</div>
+            </div>
+            <div class="pg-info">
+              <div class="pg-bottles">6 BOTTLES</div>
+              <div class="pg-supply">180 Day Supply</div>
+              <div class="pg-price"><sup>$</sup>49<sub>/Bottle</sub></div>
+              <ul class="pg-feats">
+                <li class="yes"><span class="icon">✓</span>4 FREE BONUSES!</li>
+                <li class="yes"><span class="icon">✓</span>FAST & FREE SHIPPING</li>
+                <li class="yes"><span class="icon">✓</span>60 DAYS GUARANTEE</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://presgera.mycartpanda.com/checkout/153654596:1?afid=NOQDWwzty4" class="pg-btn">🛒 BUY NOW</a>
+          <div class="pg-cards">
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="MC">
+            <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
+            <img src="https://img.icons8.com/color/48/discover.png" alt="Discover">
+          </div>
+          <div class="pg-total">TOTAL: <s>$1074</s> <b>$294</b></div>
+        </div>
+      </div>
+
+      <!-- STANDARD -->
+      <div class="pg-card standard">
+        <div class="pg-badge">STANDARD</div>
+        <div class="pg-body">
+          <div class="pg-row">
+            <div class="pg-img-wrap">
+              <img src="https://vitalityalways.com/ofc/Presgera-pote-3.png" alt="3 Bottles">
+              <div class="pg-save"><span>SAVE</span><b>$330</b><span>TODAY</span></div>
+              <div class="pg-bonus">+2 BONUS</div>
+            </div>
+            <div class="pg-info">
+              <div class="pg-bottles">3 BOTTLES</div>
+              <div class="pg-supply">90 Day Supply</div>
+              <div class="pg-price"><sup>$</sup>69<sub>/Bottle</sub></div>
+              <ul class="pg-feats">
+                <li class="yel"><span class="icon">✓</span>2 FREE BONUSES!</li>
+                <li class="yel"><span class="icon">✓</span>FAST & FREE SHIPPING</li>
+                <li class="yes"><span class="icon">✓</span>60 DAYS GUARANTEE</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://presgera.mycartpanda.com/checkout/153654595:1?afid=NOQDWwzty4" class="pg-btn">🛒 BUY NOW</a>
+          <div class="pg-cards">
+            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+            <img src="https://img.icons8.com/color/48/mastercard.png" alt="MC">
+            <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
+            <img src="https://img.icons8.com/color/48/discover.png" alt="Discover">
+          </div>
+          <div class="pg-total">TOTAL: <s>$537</s> <b>$207</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:90px;"></div>
 </main>
+
+<script>
+// CONTADOR AO VIVO
+let currentCount = 512;
+const counterElement = document.getElementById('counter');
+
+function increaseCounter() {
+  const increase = Math.random() < 0.72 ? 1 : (Math.random() < 0.92 ? 2 : 3);
+  currentCount += increase;
+  counterElement.textContent = currentCount;
+}
+
+function startLiveCounter() {
+  setTimeout(() => {
+    increaseCounter();
+    setInterval(() => {
+      if (Math.random() < 0.68) increaseCounter();
+    }, 3200);
+  }, 4500);
+}
+window.addEventListener('load', startLiveCounter);
+// FIM DO CONTADOR
+</script>
 
 <script>
 var s=document.createElement("script");
@@ -290,14 +314,11 @@ s.async=true;
 document.head.appendChild(s);
 </script>
 
-<!-- SCRIPT PARA MOSTRAR A OFERTA NO MOMENTO CERTO DO VÍDEO -->
 <script>
 (function(){
   var player = document.querySelector('vturb-smartplayer');
   if(player){
     player.addEventListener('player:ready', function(){
-      // ✅ MUDE AQUI O TEMPO EM SEGUNDOS que a oferta deve aparecer
-      // Exemplo: 180 = aparece aos 3 minutos do vídeo
       player.displayHiddenElements(5, ['.pg-oferta'], {persist:true});
     });
   }
@@ -307,27 +328,15 @@ document.head.appendChild(s);
 <script>
 const options={year:'numeric',month:'long',day:'numeric'};
 const today=new Date().toLocaleDateString('en-US',options);
-document.getElementById("publishDate").innerHTML=
-"Health | Science | Published "+today;
+document.getElementById("publishDate").innerHTML="Health | Science | Published "+today;
 </script>
 
 <!-- META PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}
-(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','26564244729865610');
 fbq('track','PageView');
 </script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"/>
-</noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"/></noscript>
 </body>
 </html>
