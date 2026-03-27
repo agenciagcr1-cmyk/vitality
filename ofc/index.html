@@ -7,61 +7,58 @@
 
 <!-- PRELOAD VTURB -->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69bc9152ab9c7e1e9b757fa6/v4/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/69bc911c237e0fc6aeba4123/main.m3u8" as="fetch">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+<link rel="preload" href="https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69c58176c9da180d96de2431/v4/player.js" as="script">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
 
+/* ===== BASE ===== */
 body{
-  font-family: Georgia,"Times New Roman",serif;
+  margin:0;
   background:#fff;
   color:#111;
-  margin:0;
-  line-height:1.45;
+  font-family:Arial, Helvetica, sans-serif; /* NÃO quebra o VTurb */
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .nyt-header{
   border-bottom:1px solid #e2e2e2;
-  padding:14px 20px;
+  padding:14px 16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  max-width:1300px;
+  max-width:1200px;
   margin:auto;
 }
 
 .menu-icon,.profile-icon{
-  font-size:1.6rem;
+  font-size:1.5rem;
 }
 
 .nyt-logo{
-  font-size:1.9rem;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.8rem;
   font-weight:700;
-  letter-spacing:-0.5px;
+  letter-spacing:-0.4px;
 }
 
-/* CONTENT */
+/* ===== CONTENT ===== */
 .content{
   max-width:720px;
-  margin:42px auto;
-  padding:0 20px;
+  margin:36px auto;
+  padding:0 18px;
+  font-family:Georgia,"Times New Roman",serif; /* serif só no editorial */
 }
 
-/* META LINE */
+/* META */
 .meta{
   font-family:Arial, Helvetica, sans-serif;
-  font-size:0.78rem;
+  font-size:.75rem;
   color:#6b6b6b;
   text-transform:uppercase;
-  letter-spacing:.04em;
+  letter-spacing:.05em;
   margin-bottom:18px;
 }
 
@@ -70,7 +67,7 @@ body{
   font-size:2rem;
   line-height:1.12;
   font-weight:700;
-  margin:0 0 14px 0;
+  margin:0 0 14px;
   letter-spacing:-0.4px;
 }
 
@@ -78,14 +75,13 @@ body{
   text-transform:uppercase;
 }
 
-/* HIGHLIGHT */
 .highlight{
   color:#b11226;
 }
 
 /* SUBHEAD */
 .subtitle{
-  font-size:1.22rem;
+  font-size:1.2rem;
   color:#444;
   line-height:1.5;
   margin-bottom:14px;
@@ -96,7 +92,14 @@ body{
   font-family:Arial, Helvetica, sans-serif;
   font-size:.9rem;
   color:#555;
-  margin-bottom:28px;
+  margin-bottom:26px;
+}
+
+/* VIDEO */
+.video-wrapper{
+  width:100%;
+  max-width:400px;
+  margin:0 auto;
 }
 
 </style>
@@ -129,29 +132,33 @@ Over 15,000 Americans say their numbness and nerve pain started improving after 
 By Michael Reynolds | Health Correspondent
 </div>
 
-<!-- VIDEO VTURB -->
-<vturb-smartplayer id="vid-69c58176c9da180d96de2431" style="display:block;margin:0 auto;width:100%;max-width:400px;"></vturb-smartplayer>
+<!-- VIDEO -->
+<div class="video-wrapper">
 
-<script type="text/javascript">
+<vturb-smartplayer id="vid-69c58176c9da180d96de2431"
+style="display:block;width:100%;"></vturb-smartplayer>
+
+</div>
+
+<script>
 var s=document.createElement("script");
-s.src="https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69c58176c9da180d96de2431/v4/player.js",
-s.async=!0,document.head.appendChild(s);
+s.src="https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69c58176c9da180d96de2431/v4/player.js";
+s.async=true;
+document.head.appendChild(s);
 </script>
 
-<!-- Espaçador -->
 <div style="margin-bottom:90px;"></div>
 
 </main>
 
 <script>
-/* DATA AUTOMÁTICA GLOBAL */
 const options={year:'numeric',month:'long',day:'numeric'};
 const today=new Date().toLocaleDateString('en-US',options);
 document.getElementById("publishDate").innerHTML=
 "Health | Science | Published "+today;
 </script>
 
-<!-- Meta Pixel Code -->
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -159,11 +166,12 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)}
+(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '26564244729865610');
-fbq('track', 'PageView');
+fbq('init','26564244729865610');
+fbq('track','PageView');
 </script>
 
 <noscript>
