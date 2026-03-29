@@ -279,25 +279,14 @@ src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"/>
 <!-- BACK REDIRECT VSL -->
 <script>
 (function() {
-
   var backRedirectUrl = "https://vitalityalways.com/official/";
-  var backIntercepted = false;
-
-  // cria histórico falso
+  
+  history.pushState({}, "", location.href);
   history.pushState({}, "", location.href);
 
   window.addEventListener("popstate", function () {
-
-    if (!backIntercepted) {
-      backIntercepted = true;
-
-      setTimeout(function () {
-        window.location.href = backRedirectUrl;
-      }, 50);
-
-      history.pushState({}, "", location.href);
-    }
-
+    history.pushState({}, "", location.href);
+    window.location.href = backRedirectUrl;
   });
 
 })();
