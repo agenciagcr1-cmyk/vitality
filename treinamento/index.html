@@ -420,6 +420,164 @@ Os resultados dependem da situação individual de cada pessoa.
 </head>
 <body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comments</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Nunito Sans", sans-serif; background: #fff; }
+
+  #fb-comments {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    background: #fff;
+  }
+
+  .fb-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1c1e21;
+    margin-bottom: 14px;
+  }
+
+  .comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+  }
+
+  .comment > .comment-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f0f2f5;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .comment-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .user-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1877f2;
+    line-height: 1.3;
+  }
+
+  .user-text {
+    font-size: 14px;
+    color: #1c1e21;
+    line-height: 1.4;
+    margin-top: 1px;
+  }
+
+  .comment-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 2px 6px 52px;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-left .like-btn,
+  .footer-left .reply-btn {
+    font-size: 12px;
+    color: #65676b;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .footer-left .like-btn:hover,
+  .footer-left .reply-btn:hover { text-decoration: underline; }
+
+  .footer-left .dot {
+    font-size: 12px;
+    color: #65676b;
+  }
+
+  .footer-left .time {
+    font-size: 12px;
+    color: #65676b;
+    font-weight: 400;
+  }
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footer-right img.like-icon {
+    height: 18px;
+    width: auto;
+    display: block;
+  }
+
+  .footer-right .like-count {
+    font-size: 13px;
+    color: #65676b;
+  }
+
+  .comment-answer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-bottom: 4px;
+  }
+
+  .comment-answer > .comment-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f0f2f5;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .comment-answer .user-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .comment-answer .user-name { font-size: 13px; }
+  .comment-answer .user-text { font-size: 13px; }
+
+  .comment-answer .comment-footer {
+    padding-left: 46px;
+  }
+</style>
+</head>
+<body>
+
 <div id="fb-comments" style="display:block;">
   <h2 class="fb-heading">36,158 Comments</h2>
   <div class="comments-container">
@@ -442,7 +600,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">2h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">23</span>
         </div>
       </div>
@@ -466,7 +624,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">35 min</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">17</span>
         </div>
       </div>
@@ -490,7 +648,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">7 min</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">11</span>
         </div>
       </div>
@@ -514,7 +672,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">6 min</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">32</span>
         </div>
       </div>
@@ -538,7 +696,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">5 min</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">6</span>
         </div>
       </div>
@@ -562,7 +720,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">1h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">9</span>
         </div>
       </div>
@@ -586,13 +744,11 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">45 min</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">21</span>
         </div>
       </div>
     </div>
-
-    <!-- ===== 6 NOVOS COMENTÁRIOS PRINCIPAIS ===== -->
 
     <!-- Comentário 3 -->
     <div class="comment" data-comment-id="3">
@@ -612,7 +768,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">3h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">47</span>
         </div>
       </div>
@@ -636,7 +792,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">4h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">61</span>
         </div>
       </div>
@@ -660,7 +816,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">5h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">88</span>
         </div>
       </div>
@@ -684,7 +840,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">6h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">54</span>
         </div>
       </div>
@@ -708,7 +864,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">7h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">113</span>
         </div>
       </div>
@@ -732,7 +888,7 @@ Os resultados dependem da situação individual de cada pessoa.
           <span class="time">8h</span>
         </div>
         <div class="footer-right">
-          <img class="like-icon" src="logo_facecurtida.jpg" alt="likes">
+          <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
           <span class="like-count">38</span>
         </div>
       </div>
