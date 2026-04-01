@@ -7,7 +7,6 @@
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
 <link rel="preload" href="https://scripts.converteai.net/bba1aebb-e9b9-46b8-a8f3-aa2cfa019d1f/players/69c7eac894d36cec1176fc3d/v4/player.js" as="script">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
 <style>
 body{ margin:0; background:#fff; color:#111; font-family:Arial, Helvetica, sans-serif; }
 .nyt-header{ border-bottom:1px solid #e2e2e2; padding:14px 16px; display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:auto; }
@@ -21,10 +20,7 @@ body{ margin:0; background:#fff; color:#111; font-family:Arial, Helvetica, sans-
 .subtitle{ font-size:1.2rem; color:#444; line-height:1.5; margin-bottom:14px; }
 .author{ font-family:Arial, Helvetica, sans-serif; font-size:.9rem; color:#555; margin-bottom:26px; }
 .video-wrapper{ width:100%; max-width:400px; margin:0 auto; }
-.live-counter { background-color: #ffe6e6; color: #d32f2f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 17px; font-weight: 600; padding: 14px 28px; border-radius: 50px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(211, 47, 47, 0.18); margin: 25px auto 35px; max-width: fit-content; user-select: none; }
-.live-counter #counter { color: #000000; font-weight: 700; margin-right: 6px; }
-.live-counter .watching-text { color: #d32f2f; font-weight: 500; }
-@media (max-width: 768px) { .live-counter { font-size: 15.5px; padding: 12px 24px; margin: 20px auto 30px; } }
+
 .pg-grid{display:flex;gap:6px;justify-content:center;align-items:flex-end;max-width:760px;margin:40px auto 0}
 .pg-card{background:#fff;border:2px solid #ddd;border-radius:8px;overflow:visible;flex:1;max-width:230px;display:flex;flex-direction:column;position:relative}
 .pg-card.hot{background:linear-gradient(180deg,#d7ffdd 0%,#d7ffdd 100%);border:3px solid #00bb08}
@@ -61,6 +57,7 @@ body{ margin:0; background:#fff; color:#111; font-family:Arial, Helvetica, sans-
 .pg-total s{color:#cc2020}
 .pg-total b{color:#222;font-size:15px}
 .pg-card.hot .pg-total b{color:#222}
+
 @media(max-width:600px){
   .pg-grid{flex-direction:column;align-items:stretch;gap:12px;max-width:420px;margin:40px auto 0}
   .pg-card{max-width:100%;width:100%}
@@ -86,6 +83,22 @@ body{ margin:0; background:#fff; color:#111; font-family:Arial, Helvetica, sans-
   .pg-total{font-size:13px;text-align:center}
   .pg-cards{margin-bottom:6px}
 }
+
+/* Estilos dos Comentários */
+#fb-comments {
+  width: 100%;
+  max-width: 720px;
+  margin: 30px auto 40px;
+  padding: 16px;
+  background: #fff;
+}
+.fb-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1e21;
+  margin-bottom: 16px;
+  text-align: center;
+}
 </style>
 </head>
 <body>
@@ -98,31 +111,328 @@ body{ margin:0; background:#fff; color:#111; font-family:Arial, Helvetica, sans-
 
 <main class="content">
   <div class="meta" id="publishDate">Health | Science</div>
-  
+ 
   <h1 class="urgent-title">
-    <strong></strong> For the First Time in Human History… Neurologists Admit This "<span class="highlight">Red Vitamin</span>" May Reverse Neuropathy at Its Root
+    For the First Time in Human History… Neurologists Admit This "<span class="highlight">Red Vitamin</span>" May Reverse Neuropathy at Its Root
   </h1>
-  
-  <p class="subtitle">
-
-  </p>
-  
+ 
   <div class="author">By Dr. Kenji Satoh | Health Correspondent</div>
-
+  
   <div class="video-wrapper">
     <vturb-smartplayer id="vid-69c7eac894d36cec1176fc3d" style="display:block;width:100%;max-width:400px;margin:0 auto;"></vturb-smartplayer>
   </div>
 
-  <div style="text-align: center;">
-    <div class="live-counter">
-      <span id="counter">512</span>
-      <span class="watching-text">people watching now...</span>
+  <!-- COMENTÁRIOS FACEBOOK -->
+  <div id="fb-comments">
+    <h2 class="fb-heading">COMENTÁRIOS FACEBOOK</h2>
+    
+    <div class="comments-container">
+      <!-- Seus comentários (mantidos todos) -->
+      <div class="comment" data-comment-id="1">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/women/54.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Sophie Reynolds</p>
+            <p class="user-text">I swear I thought it was just another one of those loooong, boring vids. Congrats, Dr. Mark Hyman, for sharing something that actually WORKS!</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">2h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">23</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment-answer" data-comment-id="1a">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/women/67.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Olivia Cooper</p>
+            <p class="user-text">Dr. Mark Hyman is amazingggg 🤛</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">35 min</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">17</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment-answer" data-comment-id="1b">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/men/72.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Marcus Harris</p>
+            <p class="user-text">He's an angel, seriously. I tried the holy-oil trick and haven't had a single sugar spike in months.</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">7 min</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">11</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment-answer" data-comment-id="1c">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/women/76.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Laura Mitchell</p>
+            <p class="user-text">Exactly!! I'm walking more, sleeping better, and honestly feel years younger.</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">6 min</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">32</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment-answer" data-comment-id="1d">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/men/65.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Dylan Foster</p>
+            <p class="user-text">Same here! My feet don't burn anymore — I feel like 30 years younger 😄</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">5 min</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">6</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="2">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/men/58.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Nathan Brooks</p>
+            <p class="user-text">I dunno guys, is it legit or just marketing hype??</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">1h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">9</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment-answer" data-comment-id="2a">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/women/61.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Amber Jenkins</p>
+            <p class="user-text">Nathan, I was super skeptical too, but it's real. Try it for a few days and you'll see. I couldn't believe how fast it helped my vision and stopped that burning in my feet…</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">45 min</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">21</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="3">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/women/70.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Patricia Simmons</p>
+            <p class="user-text">My doctor had no idea what to do with my blood sugar levels. After watching this I finally understood what was really going on. Thank you so much for putting this out there!</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">3h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">47</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="4">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Robert Caldwell</p>
+            <p class="user-text">I'm 63 and have been dealing with this for 10 years. Started 3 weeks ago and my energy is through the roof. Wish I found this sooner.</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">4h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">61</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="5">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/women/80.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Carol Henderson</p>
+            <p class="user-text">Shared this with my whole church group. We're all in our 60s and we needed this. God bless Dr. Hyman for being so honest about everything 🙏</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">5h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">88</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="6">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/men/60.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Gerald Thomas</p>
+            <p class="user-text">My wife sent me this video and I almost didn't watch it. Glad I did. Down 11 lbs in 5 weeks and my knees don't ache like they used to. This is the real deal.</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">6h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">54</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="7">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/women/57.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Sandra Flores</p>
+            <p class="user-text">Been taking metformin for 8 years. After following the advice in this video for just 2 weeks my doctor actually reduced my dosage. I'm crying writing this 😭</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">7h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">113</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="8">
+        <div class="comment-inner">
+          <img decoding="async" class="user-avatar" src="https://randomuser.me/api/portraits/men/68.jpg" alt="">
+          <div class="comment-data">
+            <p class="user-name">Dennis Whitaker</p>
+            <p class="user-text">I was very doubtful at first, I'll be honest. But my son showed me the numbers — the research doesn't lie. Already ordered mine. Will report back in a month!</p>
+          </div>
+        </div>
+        <div class="comment-footer">
+          <div class="footer-left">
+            <span class="like-btn">Like</span>
+            <span class="dot">·</span>
+            <span class="reply-btn">Reply</span>
+            <span class="dot">·</span>
+            <span class="time">8h</span>
+          </div>
+          <div class="footer-right">
+            <img class="like-icon" src="https://raw.githubusercontent.com/agenciagcr1-cmyk/vitality/main/treinamento/logo_facecurtida.jpg" alt="likes">
+            <span class="like-count">38</span>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    <p class="no-more-comments" style="text-align:center; font-size:15px; color:#666; margin-top:20px;">This post is no longer receiving comments!</p>
   </div>
 
   <div class="pg-oferta" style="display:none; margin-top:40px;">
     <div class="pg-grid">
-
       <div class="pg-card basic">
         <div class="pg-badge">BASIC</div>
         <div class="pg-body">
@@ -214,7 +524,6 @@ body{ margin:0; background:#fff; color:#111; font-family:Arial, Helvetica, sans-
           <div class="pg-total">TOTAL: <s>$537</s> <b>$207</b></div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -227,7 +536,7 @@ const counterElement = document.getElementById('counter');
 function increaseCounter() {
   const increase = Math.random() < 0.72 ? 1 : (Math.random() < 0.92 ? 2 : 3);
   currentCount += increase;
-  counterElement.textContent = currentCount;
+  if(counterElement) counterElement.textContent = currentCount;
 }
 function startLiveCounter() {
   setTimeout(() => {
@@ -269,26 +578,22 @@ document.getElementById("publishDate").innerHTML="Health | Science | Published "
 fbq('init','26564244729865610');
 fbq('track','PageView');
 </script>
-
 <noscript>
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"/>
 </noscript>
 
-
 <!-- BACK REDIRECT VSL -->
 <script>
 (function() {
   var backRedirectUrl = "https://vitalityalways.com/official/";
-  
+ 
   history.pushState({}, "", location.href);
   history.pushState({}, "", location.href);
-
   window.addEventListener("popstate", function () {
     history.pushState({}, "", location.href);
     window.location.href = backRedirectUrl;
   });
-
 })();
 </script>
 <!-- END BACK REDIRECT -->
@@ -301,6 +606,6 @@ src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"/>
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://api.vturb.com.br">
-  
+ 
 </body>
 </html>
