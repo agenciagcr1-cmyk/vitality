@@ -748,6 +748,176 @@ Os resultados dependem da situação individual de cada pessoa.
 </head>
 <body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comments</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Nunito Sans", sans-serif; background: #fff; }
+
+  #fb-comments {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    background: #fff;
+  }
+
+  .fb-heading {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1c1e21;
+    margin-bottom: 14px;
+  }
+
+  .comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+  }
+
+  .comment > .comment-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f0f2f5;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .comment-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .user-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1a4c8e;
+    line-height: 1.3;
+  }
+
+  .user-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #1c1e21;
+    line-height: 1.45;
+    margin-top: 1px;
+  }
+
+  .comment-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 2px 8px 52px;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footer-left .like-btn,
+  .footer-left .reply-btn {
+    font-size: 11px;
+    color: #65676b;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .footer-left .like-btn:hover,
+  .footer-left .reply-btn:hover { text-decoration: underline; }
+
+  .footer-left .dot {
+    font-size: 11px;
+    color: #65676b;
+  }
+
+  .footer-left .time {
+    font-size: 11px;
+    color: #65676b;
+    font-weight: 400;
+  }
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footer-right img.like-icon {
+    height: 18px;
+    width: auto;
+    display: block;
+  }
+
+  .footer-right .like-count {
+    font-size: 13px;
+    color: #65676b;
+  }
+
+  /* RESPOSTAS */
+  .comment-answer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-bottom: 4px;
+  }
+
+  .comment-answer > .comment-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f0f2f5;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .comment-answer .user-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .comment-answer .user-name { font-size: 15px; }
+  .comment-answer .user-text { font-size: 14px; }
+
+  .comment-answer .comment-footer {
+    padding-left: 46px;
+  }
+
+  /* TEXTO FINAL */
+  .no-more-comments {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1c1e21;
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+</style>
+</head>
+<body>
+
 <div id="fb-comments" style="display:block;">
   <h2 class="fb-heading">36,158 Comments</h2>
   <div class="comments-container">
