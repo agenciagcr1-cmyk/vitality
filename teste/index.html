@@ -574,31 +574,5 @@
     </script>
     <script src="./assets/js/main.js"></script>
     
-    <script>
-  function esconderRibbonCartpanda() {
-    const textos = document.querySelectorAll('*');
-    textos.forEach(function(el) {
-      if (
-        el.children.length === 0 &&
-        el.textContent.includes('Cartpanda') &&
-        el.textContent.includes('licensors')
-      ) {
-        let pai = el;
-        // sobe até o elemento raiz do ribbon
-        while (pai.parentElement && pai.parentElement !== document.body) {
-          pai = pai.parentElement;
-        }
-        pai.style.setProperty('visibility', 'hidden', 'important');
-        pai.style.setProperty('height', '0', 'important');
-        pai.style.setProperty('overflow', 'hidden', 'important');
-        pai.style.setProperty('position', 'fixed', 'important');
-        pai.style.setProperty('bottom', '-9999px', 'important');
-      }
-    });
-  }
-
-  // Tenta imediatamente e depois fica monitorando
-  setInterval(esconderRibbonCartpanda, 500);
-</script>
   </body>
 </html>
