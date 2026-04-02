@@ -618,19 +618,32 @@
   src="https://www.facebook.com/tr?id=26564244729865610&ev=PageView&noscript=1"/>
   </noscript>
 
-  <!-- === BACK REDIRECT VSL === -->
-  <script>
-  (function() {
-    var backRedirectUrl = "https://vitalityalways.com/official/";
-    history.pushState({}, "", location.href);
-    history.pushState({}, "", location.href);
-    window.addEventListener("popstate", function () {
-      history.pushState({}, "", location.href);
+  <!-- === BACK REDIRECT VSL (VERSÃO FINAL) === -->
+<script>
+(function() {
+  var backRedirectUrl = "https://vitalityalways.com/official/";
+  var isInternal = false;
+
+  // Detecta clique em âncoras (#)
+  document.addEventListener("click", function(e) {
+    var a = e.target.closest("a");
+    if (a && a.getAttribute("href") && a.getAttribute("href").startsWith("#")) {
+      isInternal = true;
+      setTimeout(function() { isInternal = false; }, 800);
+    }
+  });
+
+  // Adiciona estado ao histórico
+  history.pushState({}, "", location.href);
+
+  window.addEventListener("popstate", function () {
+    if (!isInternal) {
       window.location.href = backRedirectUrl;
-    });
-  })();
-  </script>
-  <!-- END BACK REDIRECT -->
+    }
+  });
+})();
+</script>
+<!-- END BACK REDIRECT -->
 
 </body>
 </html>
