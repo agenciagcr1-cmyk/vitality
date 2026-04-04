@@ -118,7 +118,7 @@ h1 {
     white-space: nowrap;
 
     .ticker-content {
-      display: flex;
+      display: inline-block;
       animation: scroll 30s linear infinite;
       font-size: 14px;
       font-weight: 600;
