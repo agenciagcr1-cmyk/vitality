@@ -602,6 +602,23 @@
         }
       });
     </script>
+    <script>
+  (function() {
+    var el = document.getElementById("viewer-number");
+    var current = 529;
+    var target = 620;
+    var interval = (50 * 60 * 1000) / (target - current);
+    setInterval(function() {
+      var rand = Math.random();
+      if (rand < 0.15 && current > 529) {
+        current--;
+      } else if (current < target) {
+        current++;
+      }
+      el.textContent = current;
+    }, interval);
+  })();
+</script>
     <script src="./assets/js/main.js"></script>
 
   <!-- === CÓDIGO DO FACEBOOK PIXEL === -->
