@@ -603,21 +603,24 @@
       });
     </script>
     <script>
-  (function() {
-    var el = document.getElementById("viewer-number");
-    var current = 529;
-    var target = 620;
-    var interval = (50 * 60 * 1000) / (target - current);
-    setInterval(function() {
-      var rand = Math.random();
-      if (rand < 0.15 && current > 529) {
-        current--;
-      } else if (current < target) {
-        current++;
-      }
-      el.textContent = current;
-    }, interval);
-  })();
+  let currentCount = 529;
+  const counterElement = document.getElementById('viewer-number');
+  function increaseCounter() {
+    const increase = Math.random() < 0.72 ? 1 : (Math.random() < 0.92 ? 2 : 3);
+    if (currentCount < 620) {
+      currentCount += increase;
+      counterElement.textContent = currentCount;
+    }
+  }
+  function startLiveCounter() {
+    setTimeout(() => {
+      increaseCounter();
+      setInterval(() => {
+        if (Math.random() < 0.68) increaseCounter();
+      }, 3200);
+    }, 4500);
+  }
+  window.addEventListener('load', startLiveCounter);
 </script>
     <script src="./assets/js/main.js"></script>
 
