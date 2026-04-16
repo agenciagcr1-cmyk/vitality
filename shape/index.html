@@ -150,9 +150,6 @@
   document.head.appendChild(s);
 </script>
       </div>
-      <div class="viewer-counter">
-        <span id="viewer-number">529</span> people watching now 🔴
-      </div>
 
       <!-- SEÇÃO DOS POTES COM DELAY -->
       <div data-delay>
@@ -624,26 +621,6 @@
       });
     </script>
 
-    <script>
-  let currentCount = 529;
-  const counterElement = document.getElementById('viewer-number');
-  function increaseCounter() {
-    const increase = Math.random() < 0.72 ? 1 : (Math.random() < 0.92 ? 2 : 3);
-    if (currentCount < 620) {
-      currentCount += increase;
-      counterElement.textContent = currentCount;
-    }
-  }
-  function startLiveCounter() {
-    setTimeout(() => {
-      increaseCounter();
-      setInterval(() => {
-        if (Math.random() < 0.68) increaseCounter();
-      }, 3200);
-    }, 4500);
-  }
-  window.addEventListener('load', startLiveCounter);
-</script>
     <script src="./assets/js/main.js"></script>
 
   <!-- === CÓDIGO DO FACEBOOK PIXEL === -->
