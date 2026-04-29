@@ -140,10 +140,9 @@ s.src="https://scripts.converteai.net/b1a03fbd-bbbd-42c6-914a-86e309da94f5/playe
 s.async=!0,document.head.appendChild(s);
 </script>
       </div>
-      <div class="viewer-counter">
-        <span id="viewer-number">529</span> people watching now...
-      </div>
-
+      <div style="text-align: center; margin: 15px auto;">
+  <img src="assets/img/plagt.png" alt="News Logos" style="max-width: 100%; width: 420px;" />
+</div>
       <!-- SEÇÃO DOS POTES COM DELAY -->
       <div data-delay>
         <div class="promo-banner">
@@ -544,7 +543,7 @@ s.async=!0,document.head.appendChild(s);
 
     <script>
       const countdownElements = document.querySelectorAll(".countdown");
-      let totalSeconds = 60 * 60;
+      let totalSeconds = 13 * 60;
       function updateCountdown() {
         if (totalSeconds <= 0) {
           countdownElements.forEach((el) => (el.textContent = "00:00"));
@@ -593,26 +592,6 @@ s.async=!0,document.head.appendChild(s);
         }
       });
     </script>
-    <script>
-  let currentCount = 529;
-  const counterElement = document.getElementById('viewer-number');
-  function increaseCounter() {
-    const increase = Math.random() < 0.72 ? 1 : (Math.random() < 0.92 ? 2 : 3);
-    if (currentCount < 620) {
-      currentCount += increase;
-      counterElement.textContent = currentCount;
-    }
-  }
-  function startLiveCounter() {
-    setTimeout(() => {
-      increaseCounter();
-      setInterval(() => {
-        if (Math.random() < 0.68) increaseCounter();
-      }, 3200);
-    }, 4500);
-  }
-  window.addEventListener('load', startLiveCounter);
-</script>
     <script src="./assets/js/main.js"></script>
 
   <!-- === CÓDIGO DO FACEBOOK PIXEL === -->
