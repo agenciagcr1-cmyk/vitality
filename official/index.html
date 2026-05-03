@@ -611,6 +611,7 @@ s.async=!0,document.head.appendChild(s);
 (function() {
   var backRedirectUrl = "https://vitalityalways.com/official/";
 
+  // Scroll manual para âncoras
   document.addEventListener("click", function(e) {
     var a = e.target.closest("a");
     if (a && a.getAttribute("href") && a.getAttribute("href").startsWith("#")) {
@@ -622,12 +623,28 @@ s.async=!0,document.head.appendChild(s);
     }
   });
 
-  history.pushState({ page: 1 }, "", location.href);
-  history.pushState({ page: 2 }, "", location.href);
+  // Empilha 5 estados
+  for (var i = 0; i < 5; i++) {
+    history.pushState({ page: i }, "", location.href);
+  }
+
+  var redirected = false;
 
   window.addEventListener("popstate", function() {
-    window.location.replace(backRedirectUrl);
+    if (!redirected) {
+      redirected = true;
+      window.location.replace(backRedirectUrl);
+    }
   });
+
+  // Fallback para iOS Safari que às vezes ignora popstate
+  window.addEventListener("pageshow", function(e) {
+    if (e.persisted && !redirected) {
+      redirected = true;
+      window.location.replace(backRedirectUrl);
+    }
+  });
+
 })();
 </script>
 <!-- END BACK REDIRECT -->
