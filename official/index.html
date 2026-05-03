@@ -610,24 +610,23 @@ s.async=!0,document.head.appendChild(s);
 <script>
 (function() {
   var backRedirectUrl = "https://vitalityalways.com/official/";
-  var isInternal = false;
 
-  // Detecta clique em âncoras (#)
   document.addEventListener("click", function(e) {
     var a = e.target.closest("a");
     if (a && a.getAttribute("href") && a.getAttribute("href").startsWith("#")) {
-      isInternal = true;
-      setTimeout(function() { isInternal = false; }, 800);
+      e.preventDefault();
+      var target = document.querySelector(a.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     }
   });
 
-  // Adiciona estado ao histórico
-  history.pushState({}, "", location.href);
+  history.pushState({ page: 1 }, "", location.href);
+  history.pushState({ page: 2 }, "", location.href);
 
-  window.addEventListener("popstate", function () {
-    if (!isInternal) {
-      window.location.href = backRedirectUrl;
-    }
+  window.addEventListener("popstate", function() {
+    window.location.replace(backRedirectUrl);
   });
 })();
 </script>
