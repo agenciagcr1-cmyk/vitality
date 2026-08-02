@@ -16,6 +16,9 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
+      [data-delay] {
+  display: none;
+}
   .cpd-ribbon,
   .cpd-badge,
   .cpd-container,
@@ -955,5 +958,37 @@
         }
       });
     </script>
+    <script>
+  var delaySeconds = 5;
+  var player = document.querySelector("vturb-smartplayer");
+  player.addEventListener("player:ready", function () {
+    player.displayHiddenElements(delaySeconds, ["[data-delay]"], {
+      persist: true,
+    });
+    const target = document.querySelector("[data-delay]");
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.attributeName === "style" ||
+          mutation.attributeName === "class"
+        ) {
+          const isVisible =
+            window.getComputedStyle(target).display !== "none";
+          if (isVisible && !window.scrolledOnce) {
+            window.scrolledOnce = true;
+            setTimeout(() => {
+              document
+                .getElementById("kits")
+                .scrollIntoView({ behavior: "smooth" });
+            }, 300);
+          }
+        }
+      });
+    });
+    if (target) {
+      observer.observe(target, { attributes: true });
+    }
+  });
+</script>
   </body>
 </html>
